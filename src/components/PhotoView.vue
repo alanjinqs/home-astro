@@ -125,7 +125,7 @@ const images = [
 <template>
   <div class="m-10">
     <h2>Photography</h2>
-    <div v-for="group in images">
+    <div v-for="group in images" :key="group.title">
       <h3>{{ group.title }}</h3>
       <masonry-wall
         :items="group.contents"
