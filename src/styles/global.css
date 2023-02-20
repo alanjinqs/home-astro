@@ -1,0 +1,46 @@
+@import "./fonts.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .text-highlight {
+    @apply text-yellow-800 dark:text-blue-300;
+  }
+}
+.astro-code {
+  @apply p-4 text-sm w-full !important;
+}
+
+@layer base {
+  h1 {
+    @apply my-6 text-3xl;
+  }
+  h2 {
+    @apply my-4 text-2xl;
+  }
+  h3 {
+    @apply my-2 text-xl;
+  }
+  mark {
+    @apply bg-transparent text-yellow-800 dark:text-blue-300;
+  }
+  p {
+    @apply my-2;
+  }
+  body {
+    @apply bg-orange-50 dark:bg-gray-900;
+  }
+}
+
+body {
+  font-family: Ubuntu, sans-serif;
+}
+
+.font-neox-display {
+  font-family: neoXDisplay, sans-serif;
+}
+
+.img-md {
+  width: max(30rem, 50%);
+}

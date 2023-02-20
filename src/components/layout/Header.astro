@@ -1,0 +1,65 @@
+---
+const headerButtonList = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "Photography",
+    link: "/photo",
+  },
+  {
+    title: "CompSci",
+    link: "/cs",
+  },
+  {
+    title: "Code",
+    link: "/code",
+  },
+];
+---
+
+<div
+  class="sticky top-0 left-0 flex w-full bg-orange-100 p-3 pl-5 dark:bg-gray-800 md:h-screen md:w-64 md:flex-col md:p-0 md:pl-10 md:pt-10"
+>
+  {
+    headerButtonList.map((item) => {
+      if (
+        Astro.url.pathname.length === 1
+          ? Astro.url.pathname === item.link
+          : item.link.includes(Astro.url.pathname)
+      ) {
+        return (
+          <a
+            href={item.link}
+            class="w-min pb-1 pr-4 text-left md:pr-0 text-highlight"
+          >
+            {item.title} {}
+          </a>
+        );
+      } else {
+        return (
+          <a href={item.link} class="w-min pb-1 pr-4 text-left md:pr-0">
+            {item.title}
+          </a>
+        );
+      }
+    })
+  }
+  <div
+    class="mr-10 mb-10 hidden flex-1 flex-col items-center justify-end text-center md:flex"
+  >
+    <a
+      class="font-mono text-sm opacity-70"
+      href="https://instagram.com/qsalanjin?igshid=YmMyMTA2M2Y="
+    >
+      Ins: qsalanjin
+    </a>
+    <a class="pt-2 font-mono text-sm opacity-70" href="mailto:q@alanjin.me">
+      Email: q@alanjin.me
+    </a>
+    <p class="mt-2 font-medium">
+      Qiushi <span class="opacity-70">Alan</span> Jin
+    </p>
+  </div>
+</div>

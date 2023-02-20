@@ -1,0 +1,44 @@
+---
+import Header from "../components/layout/Header.astro";
+import HTMLHead from "../components/layout/HTMLHead.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <HTMLHead />
+  <body>
+    <div
+      class="flex min-h-screen flex-col bg-orange-50 dark:bg-gray-900 dark:text-neutral-50 md:flex-row"
+    >
+      <Header />
+      <div class="w-full">
+        <main>
+          <slot />
+        </main>
+
+        <div
+          class="mt-10 mb-4 flex flex-1 flex-col items-center justify-end text-center opacity-60 md:hidden"
+        >
+          <a
+            class="font-mono text-sm opacity-70"
+            href="https://instagram.com/qsalanjin?igshid=YmMyMTA2M2Y="
+          >
+            Ins: qsalanjin
+          </a>
+          <a
+            class="pt-2 font-mono text-sm opacity-70"
+            href="mailto:q@alanjin.me"
+          >
+            Email: q@alanjin.me
+          </a>
+          <p class="mt-2 font-medium">
+            Qiushi <span class="opacity-80">Alan</span> Jin
+          </p>
+        </div>
+      </div>
+    </div>
+    <style is:global>
+      @import url("../styles/global.css");
+    </style>
+  </body>
+</html>

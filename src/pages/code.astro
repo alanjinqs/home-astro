@@ -1,0 +1,115 @@
+---
+import MarkdownLayout from "../layouts/MarkdownLayout.astro";
+---
+
+<MarkdownLayout>
+  <h2>My codes</h2>
+  <p>
+    I started coding when I was very young, and there's been a huge change in my
+    tech stack throughout the years. Most of my job (paid or unpaid) are related
+    to web development, and some of my projects are about mobile apps.
+  </p>
+  <h3 class="mt-10">
+    <a href="https://vatprc.net">VATSIM (VATPRC)</a>
+    <code class="text-sm">2019-Present?</code>
+  </h3>
+  <p>
+    I work for VATSIM PRC division as an assistant web developer for several
+    years, developing the ATC Center and several WordPress pages/widgets.
+    Everything is in JQuery and PHP (maybe the worst choice nowadays), but, at
+    least it's decoupled.
+  </p>
+
+  <h3 class="mt-10">
+    SCIE.PRO
+    <span class="text-sm">
+      <code>2019-21</code>
+    </span>
+  </h3>
+  <p>
+    That is an ECA (Extra-Curricular Activities) in my high-school that I
+    founded with some other senior students, and we worked together to make some
+    projects - one of them was making a commerce contest system - the first real
+    paid job I got and the last thing I did before global pandemic.
+  </p>
+
+  <h3 class="mt-10">
+    City & Bird
+    <span class="text-sm">
+      <code>2020</code>
+      <span class="opacity-70"> TechX20 Hackathon Project</span>
+    </span>
+  </h3>
+  <p>
+    A hackathon project, basicity a board game with an app to calculate
+    different points. This project forced me to learn a lot of interesting
+    technologies in 24 hours, including how to use the NFC api in iOS and
+    Apple's Multipeer Connectivity API (so they can play it offline!). This is
+    also my first time writing a mobile app. Although this is only a hackathon
+    project, everything below on this page is strongly influenced by this
+    project so I believe I have to mention it.
+  </p>
+
+  <h3 class="mt-10">
+    SCIErs
+    <span class="text-sm">
+      <code>2020-22</code>
+      <span class="opacity-70"> (Stop maintaining after my graduation)</span>
+    </span>
+  </h3>
+  <p>
+    A 3rd party App for students in my high-school to check their CMS
+    (Timetable, assessments, attendance etc.) and other information. The whole
+    app worked as a headless browser which saved cookies and sent requests to
+    the schools' web system. It was not a hard project but has a lot of users
+    (DAU was about 500, a huge number for me considering the school only had
+    about 1000 students at that time). It was first an iOS app by Swift and
+    SwiftUI, then refactored with ReactNative to provide Android support.
+  </p>
+  <div class="flex justify-center">
+    <img src="/imgs/sciers.jpg" alt="SCIErs+" class="img-md" />
+  </div>
+
+  <h3 class="mt-10">
+    <a href="https://xacademy.cc">X ACADEMY</a>
+    <code class="text-sm">2021-Present</code>
+  </h3>
+  <p>
+    From early 2021, I work for
+    <span class="font-neox-display tracking-wider">X ACADEMY</span> as a full stack
+    developer and the coordinator in the development team. After joining the company,
+    I almost purely use Vue.js and TypeScript for frontend and Node.js for backend
+    (Nest.JS for large projects and Koa for smaller ones).
+  </p>
+  <p>
+    At first, I took the development & maintenance of X-Portal, a summer camp
+    application system from my colleague. This is a Vue2 + Spring Boot project.
+  </p>
+  <p>
+    After that, I brought up the development of X-Auth, an SSO system that
+    provides OAuth2 API for all X ACADEMY's services. As Vue3 was finally stable
+    at that time, I used Vue3 (TypeScript Yeh!) and Nest.JS for this project.
+  </p>
+
+  <div class="flex justify-center">
+    <img src="/imgs/x-auth.png" alt="SCIErs+" class="img-md" />
+  </div>
+
+  <p>
+    I also lead the development of HyperEX, a web-based online metaverse
+    platform for online conferences and teaching, using many technologies that
+    I'm not familiar with such as WebRTC. This is also a Vue3 + Koa.js Project.
+  </p>
+  <p>
+    I'm still working for X ACADEMY part-time as a senior software engineer, and
+    I'm definitely looking forward to the next challenge.
+  </p>
+  <p>
+    P.S. Any question about X ACADEMY, please finds me at
+    <a class="text-highlight" href="mailto:alan.jin@xacademy.cc"
+      >alan.jin@xacademy.cc</a
+    >(me) or
+    <a class="text-highlight" href="mailto:dev@xacademy.cc">dev@xacademy.cc</a
+    >(dev group list)
+  </p>
+</MarkdownLayout>
