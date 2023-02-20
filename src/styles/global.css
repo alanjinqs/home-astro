@@ -9,7 +9,7 @@
   }
 }
 .astro-code {
-  @apply p-4 text-sm w-full !important;
+  @apply p-4 text-sm w-full invert dark:invert-0 !important;
 }
 
 @layer base {
