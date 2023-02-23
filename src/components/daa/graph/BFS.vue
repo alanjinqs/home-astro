@@ -344,15 +344,6 @@ const doCode = () => {
         >
           <code> {{ line.line }}</code>
         </p>
-        <p
-          key="end"
-          :class="[
-            -1 == currentCodeIndex ? 'text-highlight font-bold' : '',
-            'whitespace-pre-wrap',
-          ]"
-        >
-          <code>&lt;EOF&gt;</code>
-        </p>
       </div>
     </div>
     <div class="whitespace-pre-wrap text-sm opacity-75">
