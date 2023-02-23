@@ -337,15 +337,16 @@ const doCode = () => {
         <p
           v-for="line in codes"
           :class="[
-            line.index == currentCodeIndex ? 'text-red-400 font-bold' : '',
+            line.index == currentCodeIndex ? 'text-highlight font-bold' : '',
             'whitespace-pre-wrap',
           ]"
         >
           <code> {{ line.line }}</code>
         </p>
         <p
+          key="end"
           :class="[
-            -1 == currentCodeIndex ? 'text-red-400 font-bold' : '',
+            -1 == currentCodeIndex ? 'text-highlight font-bold' : '',
             'whitespace-pre-wrap',
           ]"
         >
