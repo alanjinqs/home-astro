@@ -27,7 +27,7 @@ const initialConfigs = vNG.defineConfigs({
   edge: {
     normal: {
       width: 3,
-      color: "#f8e164",
+      color: "#e87d35",
       dasharray: "0",
       linecap: "butt",
       animate: false,
@@ -35,7 +35,7 @@ const initialConfigs = vNG.defineConfigs({
     },
     hover: {
       width: 4,
-      color: "#f8e164",
+      color: "#e87d35",
       dasharray: "0",
       linecap: "butt",
       animate: false,
@@ -139,12 +139,12 @@ watch(
   () => codeGlobalVariables.v,
   () => {
     for (const node of Object.keys(graph.nodes)) {
-      if (graph.nodes[node].color == "#89df96") {
+      if (graph.nodes[node].color == "#abdbe3") {
         graph.nodes[node].color = "#f3bd7f";
         graph.nodes[node].name = node;
       }
     }
-    graph.nodes[codeGlobalVariables.v].color = "#89df96";
+    graph.nodes[codeGlobalVariables.v].color = "#abdbe3";
     graph.nodes[codeGlobalVariables.v].name = `${codeGlobalVariables.v} (v)`;
   }
 );
@@ -211,7 +211,7 @@ const codes = [
   },
   {
     index: 5,
-    line: "while Q != ∅",
+    line: "while Q.length !== 0:",
     func: () => {
       if (codeGlobalVariables.Q.length === 0) return -1;
       return 6;
@@ -246,7 +246,7 @@ const codes = [
   },
   {
     index: 8,
-    line: "\t\tif d[v] = ∞",
+    line: "\t\tif d[v] = inf",
     func: () => {
       if (codeGlobalVariables.d[codeGlobalVariables.v] === INF) return 9;
       return 7;
@@ -291,7 +291,9 @@ const doCode = () => {
         graph.nodes[node].name =
           node +
           " (d = " +
-          codeGlobalVariables.d[node] +
+          (codeGlobalVariables.d[node] == INF
+            ? "inf"
+            : codeGlobalVariables.d[node]) +
           ", π = " +
           codeGlobalVariables.π[node] +
           ")";
@@ -304,13 +306,16 @@ const doCode = () => {
 <template>
   <div>
     <div v-if="currentCodeIndex != -1" class="flex">
-      <button @click="doCode" class="bg-orange-300 px-3 py-2">
+      <button
+        @click="doCode"
+        class="bg-orange-300 px-3 py-2 dark:invert text-black"
+      >
         Run one line
       </button>
       <p class="ml-4 mr-2" v-if="currentCodeIndex == 0">s(source) =</p>
       <select
         v-if="currentCodeIndex == 0"
-        class="px-4"
+        class="px-4 dark:invert text-black"
         placeholder="s (source) = "
         v-model="codeGlobalVariables.s"
       >
@@ -320,7 +325,7 @@ const doCode = () => {
       </select>
     </div>
     <div class="flex items-center flex-col sm:flex-row justify-center gap-4">
-      <div class="w-80 h-52 dark:invert bg-white">
+      <div class="w-80 h-52 bg-white dark:invert">
         <v-network-graph
           v-model:nodes="graph.nodes"
           :edges="graph.edges"
@@ -337,6 +342,14 @@ const doCode = () => {
           ]"
         >
           <code> {{ line.line }}</code>
+        </p>
+        <p
+          :class="[
+            -1 == currentCodeIndex ? 'text-red-400 font-bold' : '',
+            'whitespace-pre-wrap',
+          ]"
+        >
+          <code>&lt;EOF&gt;</code>
         </p>
       </div>
     </div>
