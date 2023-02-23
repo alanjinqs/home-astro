@@ -184,7 +184,7 @@ const codes = reactive({
     },
     {
       index: 2,
-      line: "for each u ∈ V − { s }: \n \td[u] = ∞\n\tπ[u] = nil\n}",
+      line: "for each u ∈ V − { s }: \n \td[u] = ∞\n\tπ[u] = nil",
       func: () => {
         for (const node of Object.keys(graph.adjacencyList)) {
           if (node !== codeGlobalVariables.s) {
@@ -256,7 +256,7 @@ const codes = reactive({
     },
     {
       index: 9,
-      line: "\t\td[v] = d[u] + 1",
+      line: "\t\t\td[v] = d[u] + 1",
       func: () => {
         codeGlobalVariables.d[codeGlobalVariables.v] =
           codeGlobalVariables.d[codeGlobalVariables.u] + 1;
@@ -265,7 +265,7 @@ const codes = reactive({
     },
     {
       index: 10,
-      line: "\t\tπ[v] = u",
+      line: "\t\t\tπ[v] = u",
       func: () => {
         codeGlobalVariables.π[codeGlobalVariables.v] = codeGlobalVariables.u;
         return 11;
@@ -273,7 +273,7 @@ const codes = reactive({
     },
     {
       index: 11,
-      line: "\t\tQ.Enqueue(v)",
+      line: "\t\t\tQ.Enqueue(v)",
       func: () => {
         codeGlobalVariables.Q.push(codeGlobalVariables.v);
         return 7;
