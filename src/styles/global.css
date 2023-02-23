@@ -7,6 +7,10 @@
   .text-highlight {
     @apply text-yellow-800 dark:text-blue-300;
   }
+
+  .markdown-body a {
+    @apply text-yellow-800 dark:text-blue-300;
+  }
 }
 .astro-code {
   @apply p-4 text-sm w-full invert dark:invert-0 !important;

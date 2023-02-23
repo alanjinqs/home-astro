@@ -1,23 +1,31 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@astrojs/mdx': ^0.17.0
   '@astrojs/tailwind': ^3.0.1
   '@astrojs/vercel': ^3.1.2
   '@astrojs/vue': ^2.0.1
   '@yeger/vue-masonry-wall': ^3.4.3
   astro: ^2.0.14
   dayjs: ^1.11.7
+  rehype-katex: ^6.0.2
+  remark-math: ^5.1.1
   tailwindcss: ^3.0.24
+  v-network-graph: ^0.8.1
   vue: ^3.2.30
 
 dependencies:
+  '@astrojs/mdx': registry.npmjs.org/@astrojs/mdx/0.17.0_astro@2.0.14
   '@astrojs/tailwind': registry.npmjs.org/@astrojs/tailwind/3.0.1_hf2kjfio2dr6w52rh4mpociq2u
   '@astrojs/vercel': registry.npmjs.org/@astrojs/vercel/3.1.2_astro@2.0.14
   '@astrojs/vue': registry.npmjs.org/@astrojs/vue/2.0.1_astro@2.0.14+vue@3.2.47
   '@yeger/vue-masonry-wall': registry.npmjs.org/@yeger/vue-masonry-wall/3.4.3_vue@3.2.47
   astro: registry.npmjs.org/astro/2.0.14
   dayjs: registry.npmjs.org/dayjs/1.11.7
+  rehype-katex: registry.npmjs.org/rehype-katex/6.0.2
+  remark-math: registry.npmjs.org/remark-math/5.1.1
   tailwindcss: registry.npmjs.org/tailwindcss/3.2.7
+  v-network-graph: registry.npmjs.org/v-network-graph/0.8.1_vue@3.2.47
   vue: registry.npmjs.org/vue/3.2.47
 
 packages:
@@ -87,6 +95,36 @@ packages:
       unist-util-visit: registry.npmjs.org/unist-util-visit/4.1.2
       vfile: registry.npmjs.org/vfile/5.3.7
     transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  registry.npmjs.org/@astrojs/mdx/0.17.0_astro@2.0.14:
+    resolution: {integrity: sha512-vy4m/mwzdfDK4jC9wraFLMVwx13eXBPC8r7nkO5s8YlcFX6IDcl2LKPurP3+/ibpTei9IPQLIZOufXRDO96SYg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@astrojs/mdx/-/mdx-0.17.0.tgz}
+    id: registry.npmjs.org/@astrojs/mdx/0.17.0
+    name: '@astrojs/mdx'
+    version: 0.17.0
+    engines: {node: '>=16.12.0'}
+    dependencies:
+      '@astrojs/markdown-remark': registry.npmjs.org/@astrojs/markdown-remark/2.0.1_astro@2.0.14
+      '@astrojs/prism': registry.npmjs.org/@astrojs/prism/2.0.0
+      '@mdx-js/mdx': registry.npmjs.org/@mdx-js/mdx/2.3.0
+      '@mdx-js/rollup': registry.npmjs.org/@mdx-js/rollup/2.3.0
+      acorn: registry.npmjs.org/acorn/8.8.2
+      es-module-lexer: registry.npmjs.org/es-module-lexer/0.10.5
+      estree-util-visit: registry.npmjs.org/estree-util-visit/1.2.1
+      github-slugger: registry.npmjs.org/github-slugger/1.5.0
+      gray-matter: registry.npmjs.org/gray-matter/4.0.3
+      kleur: registry.npmjs.org/kleur/4.1.5
+      rehype-raw: registry.npmjs.org/rehype-raw/6.1.1
+      remark-frontmatter: registry.npmjs.org/remark-frontmatter/4.0.1
+      remark-gfm: registry.npmjs.org/remark-gfm/3.0.1
+      remark-smartypants: registry.npmjs.org/remark-smartypants/2.0.0
+      shiki: registry.npmjs.org/shiki/0.11.1
+      unist-util-visit: registry.npmjs.org/unist-util-visit/4.1.2
+      vfile: registry.npmjs.org/vfile/5.3.7
+    transitivePeerDependencies:
+      - astro
+      - rollup
       - supports-color
     dev: false
 
@@ -576,6 +614,12 @@ packages:
       to-fast-properties: registry.npmjs.org/to-fast-properties/2.0.0
     dev: false
 
+  registry.npmjs.org/@dash14/svg-pan-zoom/3.6.9:
+    resolution: {integrity: sha512-6u+KTQec+9+3bRdk2mReix8AGsp2mB40cw0iYfQQzo22QBkeCNpXl2amnfwQzK7xB9oH/62Wvf2z7l6l2w+csA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@dash14/svg-pan-zoom/-/svg-pan-zoom-3.6.9.tgz}
+    name: '@dash14/svg-pan-zoom'
+    version: 3.6.9
+    dev: false
+
   registry.npmjs.org/@emmetio/abbreviation/2.2.3:
     resolution: {integrity: sha512-87pltuCPt99aL+y9xS6GPZ+Wmmyhll2WXH73gG/xpGcQ84DRnptBsI2r0BeIQ0EB/SQTOe2ANPqFqj3Rj5FOGA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@emmetio/abbreviation/-/abbreviation-2.2.3.tgz}
     name: '@emmetio/abbreviation'
@@ -916,6 +960,47 @@ packages:
       - supports-color
     dev: false
 
+  registry.npmjs.org/@mdx-js/mdx/2.3.0:
+    resolution: {integrity: sha512-jLuwRlz8DQfQNiUCJR50Y09CGPq3fLtmtUQfVrj79E0JWu3dvsVcxVIcfhR5h0iXu+/z++zDrYeiJqifRynJkA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@mdx-js/mdx/-/mdx-2.3.0.tgz}
+    name: '@mdx-js/mdx'
+    version: 2.3.0
+    dependencies:
+      '@types/estree-jsx': registry.npmjs.org/@types/estree-jsx/1.0.0
+      '@types/mdx': registry.npmjs.org/@types/mdx/2.0.3
+      estree-util-build-jsx: registry.npmjs.org/estree-util-build-jsx/2.2.2
+      estree-util-is-identifier-name: registry.npmjs.org/estree-util-is-identifier-name/2.1.0
+      estree-util-to-js: registry.npmjs.org/estree-util-to-js/1.2.0
+      estree-walker: registry.npmjs.org/estree-walker/3.0.3
+      hast-util-to-estree: registry.npmjs.org/hast-util-to-estree/2.3.2
+      markdown-extensions: registry.npmjs.org/markdown-extensions/1.1.1
+      periscopic: registry.npmjs.org/periscopic/3.1.0
+      remark-mdx: registry.npmjs.org/remark-mdx/2.3.0
+      remark-parse: registry.npmjs.org/remark-parse/10.0.1
+      remark-rehype: registry.npmjs.org/remark-rehype/10.1.0
+      unified: registry.npmjs.org/unified/10.1.2
+      unist-util-position-from-estree: registry.npmjs.org/unist-util-position-from-estree/1.1.2
+      unist-util-stringify-position: registry.npmjs.org/unist-util-stringify-position/3.0.3
+      unist-util-visit: registry.npmjs.org/unist-util-visit/4.1.2
+      vfile: registry.npmjs.org/vfile/5.3.7
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  registry.npmjs.org/@mdx-js/rollup/2.3.0:
+    resolution: {integrity: sha512-wLvRfJS/M4UmdqTd+WoaySEE7q4BIejYf1xAHXYvtT1du/1Tl/z2450Gg2+Hu7fh05KwRRiehiTP9Yc/Dtn0fA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@mdx-js/rollup/-/rollup-2.3.0.tgz}
+    name: '@mdx-js/rollup'
+    version: 2.3.0
+    peerDependencies:
+      rollup: '>=2'
+    dependencies:
+      '@mdx-js/mdx': registry.npmjs.org/@mdx-js/mdx/2.3.0
+      '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils/5.0.2
+      source-map: registry.npmjs.org/source-map/0.7.4
+      vfile: registry.npmjs.org/vfile/5.3.7
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   registry.npmjs.org/@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz}
     name: '@nodelib/fs.scandir'
@@ -976,6 +1061,30 @@ packages:
       picomatch: registry.npmjs.org/picomatch/2.3.1
     dev: false
 
+  registry.npmjs.org/@rollup/pluginutils/5.0.2:
+    resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@rollup/pluginutils/-/pluginutils-5.0.2.tgz}
+    name: '@rollup/pluginutils'
+    version: 5.0.2
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@types/estree': registry.npmjs.org/@types/estree/1.0.0
+      estree-walker: registry.npmjs.org/estree-walker/2.0.2
+      picomatch: registry.npmjs.org/picomatch/2.3.1
+    dev: false
+
+  registry.npmjs.org/@types/acorn/4.0.6:
+    resolution: {integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/acorn/-/acorn-4.0.6.tgz}
+    name: '@types/acorn'
+    version: 4.0.6
+    dependencies:
+      '@types/estree': registry.npmjs.org/@types/estree/1.0.0
+    dev: false
+
   registry.npmjs.org/@types/babel__core/7.20.0:
     resolution: {integrity: sha512-+n8dL/9GWblDO0iU6eZAwEIJVr5DWigtle+Q6HLOrh/pdbXOhOtqzq8VPPE2zvNJzSKY4vH/z3iT3tn0A3ypiQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/babel__core/-/babel__core-7.20.0.tgz}
     name: '@types/babel__core'
@@ -1021,6 +1130,14 @@ packages:
       '@types/ms': registry.npmjs.org/@types/ms/0.7.31
     dev: false
 
+  registry.npmjs.org/@types/estree-jsx/1.0.0:
+    resolution: {integrity: sha512-3qvGd0z8F2ENTGr/GG1yViqfiKmRfrXVx5sJyHGFu3z7m5g5utCQtGp/g29JnjflhtQJBv1WDQukHiT58xPcYQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/estree-jsx/-/estree-jsx-1.0.0.tgz}
+    name: '@types/estree-jsx'
+    version: 1.0.0
+    dependencies:
+      '@types/estree': registry.npmjs.org/@types/estree/1.0.0
+    dev: false
+
   registry.npmjs.org/@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/estree/-/estree-1.0.0.tgz}
     name: '@types/estree'
@@ -1041,12 +1158,24 @@ packages:
     version: 0.0.30
     dev: false
 
+  registry.npmjs.org/@types/katex/0.11.1:
+    resolution: {integrity: sha512-DUlIj2nk0YnJdlWgsFuVKcX27MLW0KbKmGVoUHmFr+74FYYNUDAaj9ZqTADvsbE8rfxuVmSFc7KczYn5Y09ozg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/katex/-/katex-0.11.1.tgz}
+    name: '@types/katex'
+    version: 0.11.1
+    dev: false
+
   registry.npmjs.org/@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/mdast/-/mdast-3.0.10.tgz}
     name: '@types/mdast'
     version: 3.0.10
     dependencies:
       '@types/unist': registry.npmjs.org/@types/unist/2.0.6
+    dev: false
+
+  registry.npmjs.org/@types/mdx/2.0.3:
+    resolution: {integrity: sha512-IgHxcT3RC8LzFLhKwP3gbMPeaK7BM9eBH46OdapPA7yvuIUJ8H6zHZV53J8hGZcTSnt95jANt+rTBNUUc22ACQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/mdx/-/mdx-2.0.3.tgz}
+    name: '@types/mdx'
+    version: 2.0.3
     dev: false
 
   registry.npmjs.org/@types/ms/0.7.31:
@@ -1333,6 +1462,17 @@ packages:
     version: 1.1.1
     dev: false
 
+  registry.npmjs.org/acorn-jsx/5.3.2_acorn@8.8.2:
+    resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/acorn-jsx/-/acorn-jsx-5.3.2.tgz}
+    id: registry.npmjs.org/acorn-jsx/5.3.2
+    name: acorn-jsx
+    version: 5.3.2
+    peerDependencies:
+      acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
+    dependencies:
+      acorn: registry.npmjs.org/acorn/8.8.2
+    dev: false
+
   registry.npmjs.org/acorn-node/1.8.2:
     resolution: {integrity: sha512-8mt+fslDufLYntIoPAaIMUe/lrbrehIiwmR3t2k9LljIzoigEPF27eLk2hy8zSGzmR/ogr7zbRKINMo1u0yh5A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/acorn-node/-/acorn-node-1.8.2.tgz}
     name: acorn-node
@@ -1468,6 +1608,13 @@ packages:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/array-iterate/-/array-iterate-2.0.1.tgz}
     name: array-iterate
     version: 2.0.1
+    dev: false
+
+  registry.npmjs.org/astring/1.8.4:
+    resolution: {integrity: sha512-97a+l2LBU3Op3bBQEff79i/E4jMD2ZLFD8rHx9B6mXyB2uQwhJQYfiDqUwtfjF4QA1F2qs//N6Cw8LetMbQjcw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/astring/-/astring-1.8.4.tgz}
+    name: astring
+    version: 1.8.4
+    hasBin: true
     dev: false
 
   registry.npmjs.org/astro/2.0.14:
@@ -1744,6 +1891,12 @@ packages:
     version: 2.0.2
     dev: false
 
+  registry.npmjs.org/character-reference-invalid/2.0.1:
+    resolution: {integrity: sha512-iBZ4F4wRbyORVsu0jPV7gXkOsGYjGHPmAyv+HiHG8gi5PtC9KI2j1+v8/tlibRvjoWX027ypmG/n0HtO5t7unw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/character-reference-invalid/-/character-reference-invalid-2.0.1.tgz}
+    name: character-reference-invalid
+    version: 2.0.1
+    dev: false
+
   registry.npmjs.org/chokidar/3.5.3:
     resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/chokidar/-/chokidar-3.5.3.tgz}
     name: chokidar
@@ -1845,6 +1998,13 @@ packages:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/comma-separated-tokens/-/comma-separated-tokens-2.0.3.tgz}
     name: comma-separated-tokens
     version: 2.0.3
+    dev: false
+
+  registry.npmjs.org/commander/8.3.0:
+    resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/commander/-/commander-8.3.0.tgz}
+    name: commander
+    version: 8.3.0
+    engines: {node: '>= 12'}
     dev: false
 
   registry.npmjs.org/common-ancestor-path/1.0.1:
@@ -2063,6 +2223,12 @@ packages:
     version: 9.2.2
     dev: false
 
+  registry.npmjs.org/es-module-lexer/0.10.5:
+    resolution: {integrity: sha512-+7IwY/kiGAacQfY+YBhKMvEmyAJnw5grTUgjG85Pe7vcUI/6b7pZjZG8nQ7+48YhzEAEqrEgD2dCz/JIK+AYvw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-0.10.5.tgz}
+    name: es-module-lexer
+    version: 0.10.5
+    dev: false
+
   registry.npmjs.org/es-module-lexer/1.1.1:
     resolution: {integrity: sha512-n3ruqU8Te7I5prBd6d0darM8ajFuVNhLWvgo04hN7goWSaSrxe7ENOZitac7akN0A2o+8fMomBDsNPvW/eE3CQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-1.1.1.tgz}
     name: es-module-lexer
@@ -2128,6 +2294,49 @@ packages:
     version: 4.0.1
     engines: {node: '>=4'}
     hasBin: true
+    dev: false
+
+  registry.npmjs.org/estree-util-attach-comments/2.1.1:
+    resolution: {integrity: sha512-+5Ba/xGGS6mnwFbXIuQiDPTbuTxuMCooq3arVv7gPZtYpjp+VXH/NkHAP35OOefPhNG/UGqU3vt/LTABwcHX0w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/estree-util-attach-comments/-/estree-util-attach-comments-2.1.1.tgz}
+    name: estree-util-attach-comments
+    version: 2.1.1
+    dependencies:
+      '@types/estree': registry.npmjs.org/@types/estree/1.0.0
+    dev: false
+
+  registry.npmjs.org/estree-util-build-jsx/2.2.2:
+    resolution: {integrity: sha512-m56vOXcOBuaF+Igpb9OPAy7f9w9OIkb5yhjsZuaPm7HoGi4oTOQi0h2+yZ+AtKklYFZ+rPC4n0wYCJCEU1ONqg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/estree-util-build-jsx/-/estree-util-build-jsx-2.2.2.tgz}
+    name: estree-util-build-jsx
+    version: 2.2.2
+    dependencies:
+      '@types/estree-jsx': registry.npmjs.org/@types/estree-jsx/1.0.0
+      estree-util-is-identifier-name: registry.npmjs.org/estree-util-is-identifier-name/2.1.0
+      estree-walker: registry.npmjs.org/estree-walker/3.0.3
+    dev: false
+
+  registry.npmjs.org/estree-util-is-identifier-name/2.1.0:
+    resolution: {integrity: sha512-bEN9VHRyXAUOjkKVQVvArFym08BTWB0aJPppZZr0UNyAqWsLaVfAqP7hbaTJjzHifmB5ebnR8Wm7r7yGN/HonQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/estree-util-is-identifier-name/-/estree-util-is-identifier-name-2.1.0.tgz}
+    name: estree-util-is-identifier-name
+    version: 2.1.0
+    dev: false
+
+  registry.npmjs.org/estree-util-to-js/1.2.0:
+    resolution: {integrity: sha512-IzU74r1PK5IMMGZXUVZbmiu4A1uhiPgW5hm1GjcOfr4ZzHaMPpLNJjR7HjXiIOzi25nZDrgFTobHTkV5Q6ITjA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/estree-util-to-js/-/estree-util-to-js-1.2.0.tgz}
+    name: estree-util-to-js
+    version: 1.2.0
+    dependencies:
+      '@types/estree-jsx': registry.npmjs.org/@types/estree-jsx/1.0.0
+      astring: registry.npmjs.org/astring/1.8.4
+      source-map: registry.npmjs.org/source-map/0.7.4
+    dev: false
+
+  registry.npmjs.org/estree-util-visit/1.2.1:
+    resolution: {integrity: sha512-xbgqcrkIVbIG+lI/gzbvd9SGTJL4zqJKBFttUl5pP27KhAjtMKbX/mQXJ7qgyXpMgVy/zvpm0xoQQaGL8OloOw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/estree-util-visit/-/estree-util-visit-1.2.1.tgz}
+    name: estree-util-visit
+    version: 1.2.1
+    dependencies:
+      '@types/estree-jsx': registry.npmjs.org/@types/estree-jsx/1.0.0
+      '@types/unist': registry.npmjs.org/@types/unist/2.0.6
     dev: false
 
   registry.npmjs.org/estree-walker/2.0.2:
@@ -2204,6 +2413,14 @@ packages:
       reusify: registry.npmjs.org/reusify/1.0.4
     dev: false
 
+  registry.npmjs.org/fault/2.0.1:
+    resolution: {integrity: sha512-WtySTkS4OKev5JtpHXnib4Gxiurzh5NCGvWrFaZ34m6JehfTUhKZvn9njTfw48t6JumVQOmrKqpmGcdwxnhqBQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/fault/-/fault-2.0.1.tgz}
+    name: fault
+    version: 2.0.1
+    dependencies:
+      format: registry.npmjs.org/format/0.2.2
+    dev: false
+
   registry.npmjs.org/file-uri-to-path/1.0.0:
     resolution: {integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/file-uri-to-path/-/file-uri-to-path-1.0.0.tgz}
     name: file-uri-to-path
@@ -2246,6 +2463,13 @@ packages:
     dependencies:
       micromatch: registry.npmjs.org/micromatch/4.0.5
       pkg-dir: registry.npmjs.org/pkg-dir/4.2.0
+    dev: false
+
+  registry.npmjs.org/format/0.2.2:
+    resolution: {integrity: sha512-wzsgA6WOq+09wrU1tsJ09udeR/YZRaeArL9e1wPbFg3GG2yDnC2ldKpxs4xunpFF9DgqCqOIra3bc1HWrJ37Ww==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/format/-/format-0.2.2.tgz}
+    name: format
+    version: 0.2.2
+    engines: {node: '>=0.4.x'}
     dev: false
 
   registry.npmjs.org/fraction.js/4.2.0:
@@ -2447,6 +2671,15 @@ packages:
       web-namespaces: registry.npmjs.org/web-namespaces/2.0.1
     dev: false
 
+  registry.npmjs.org/hast-util-is-element/2.1.3:
+    resolution: {integrity: sha512-O1bKah6mhgEq2WtVMk+Ta5K7pPMqsBBlmzysLdcwKVrqzZQ0CHqUPiIVspNhAG1rvxpvJjtGee17XfauZYKqVA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/hast-util-is-element/-/hast-util-is-element-2.1.3.tgz}
+    name: hast-util-is-element
+    version: 2.1.3
+    dependencies:
+      '@types/hast': registry.npmjs.org/@types/hast/2.3.4
+      '@types/unist': registry.npmjs.org/@types/unist/2.0.6
+    dev: false
+
   registry.npmjs.org/hast-util-parse-selector/3.1.1:
     resolution: {integrity: sha512-jdlwBjEexy1oGz0aJ2f4GKMaVKkA9jwjr4MjAAI22E5fM/TXVZHuS5OpONtdeIkRKqAaryQ2E9xNQxijoThSZA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/hast-util-parse-selector/-/hast-util-parse-selector-3.1.1.tgz}
     name: hast-util-parse-selector
@@ -2471,6 +2704,30 @@ packages:
       vfile: registry.npmjs.org/vfile/5.3.7
       web-namespaces: registry.npmjs.org/web-namespaces/2.0.1
       zwitch: registry.npmjs.org/zwitch/2.0.4
+    dev: false
+
+  registry.npmjs.org/hast-util-to-estree/2.3.2:
+    resolution: {integrity: sha512-YYDwATNdnvZi3Qi84iatPIl1lWpXba1MeNrNbDfJfVzEBZL8uUmtR7mt7bxKBC8kuAuvb0bkojXYZzsNHyHCLg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/hast-util-to-estree/-/hast-util-to-estree-2.3.2.tgz}
+    name: hast-util-to-estree
+    version: 2.3.2
+    dependencies:
+      '@types/estree': registry.npmjs.org/@types/estree/1.0.0
+      '@types/estree-jsx': registry.npmjs.org/@types/estree-jsx/1.0.0
+      '@types/hast': registry.npmjs.org/@types/hast/2.3.4
+      '@types/unist': registry.npmjs.org/@types/unist/2.0.6
+      comma-separated-tokens: registry.npmjs.org/comma-separated-tokens/2.0.3
+      estree-util-attach-comments: registry.npmjs.org/estree-util-attach-comments/2.1.1
+      estree-util-is-identifier-name: registry.npmjs.org/estree-util-is-identifier-name/2.1.0
+      hast-util-whitespace: registry.npmjs.org/hast-util-whitespace/2.0.1
+      mdast-util-mdx-expression: registry.npmjs.org/mdast-util-mdx-expression/1.3.2
+      mdast-util-mdxjs-esm: registry.npmjs.org/mdast-util-mdxjs-esm/1.3.1
+      property-information: registry.npmjs.org/property-information/6.2.0
+      space-separated-tokens: registry.npmjs.org/space-separated-tokens/2.0.2
+      style-to-object: registry.npmjs.org/style-to-object/0.4.1
+      unist-util-position: registry.npmjs.org/unist-util-position/4.0.4
+      zwitch: registry.npmjs.org/zwitch/2.0.4
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   registry.npmjs.org/hast-util-to-html/8.0.4:
@@ -2502,6 +2759,17 @@ packages:
       space-separated-tokens: registry.npmjs.org/space-separated-tokens/2.0.2
       web-namespaces: registry.npmjs.org/web-namespaces/2.0.1
       zwitch: registry.npmjs.org/zwitch/2.0.4
+    dev: false
+
+  registry.npmjs.org/hast-util-to-text/3.1.2:
+    resolution: {integrity: sha512-tcllLfp23dJJ+ju5wCCZHVpzsQQ43+moJbqVX3jNWPB7z/KFC4FyZD6R7y94cHL6MQ33YtMZL8Z0aIXXI4XFTw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/hast-util-to-text/-/hast-util-to-text-3.1.2.tgz}
+    name: hast-util-to-text
+    version: 3.1.2
+    dependencies:
+      '@types/hast': registry.npmjs.org/@types/hast/2.3.4
+      '@types/unist': registry.npmjs.org/@types/unist/2.0.6
+      hast-util-is-element: registry.npmjs.org/hast-util-is-element/2.1.3
+      unist-util-find-after: registry.npmjs.org/unist-util-find-after/4.0.1
     dev: false
 
   registry.npmjs.org/hast-util-whitespace/2.0.1:
@@ -2587,6 +2855,27 @@ packages:
     version: 2.0.4
     dev: false
 
+  registry.npmjs.org/inline-style-parser/0.1.1:
+    resolution: {integrity: sha512-7NXolsK4CAS5+xvdj5OMMbI962hU/wvwoxk+LWR9Ek9bVtyuuYScDN6eS0rUm6TxApFpw7CX1o4uJzcd4AyD3Q==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/inline-style-parser/-/inline-style-parser-0.1.1.tgz}
+    name: inline-style-parser
+    version: 0.1.1
+    dev: false
+
+  registry.npmjs.org/is-alphabetical/2.0.1:
+    resolution: {integrity: sha512-FWyyY60MeTNyeSRpkM2Iry0G9hpr7/9kD40mD/cGQEuilcZYS4okz8SN2Q6rLCJ8gbCt6fN+rC+6tMGS99LaxQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/is-alphabetical/-/is-alphabetical-2.0.1.tgz}
+    name: is-alphabetical
+    version: 2.0.1
+    dev: false
+
+  registry.npmjs.org/is-alphanumerical/2.0.1:
+    resolution: {integrity: sha512-hmbYhX/9MUMF5uh7tOXyK/n0ZvWpad5caBA17GsC6vyuCqaWliRG5K1qS9inmUhEMaOBIW7/whAnSwveW/LtZw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/is-alphanumerical/-/is-alphanumerical-2.0.1.tgz}
+    name: is-alphanumerical
+    version: 2.0.1
+    dependencies:
+      is-alphabetical: registry.npmjs.org/is-alphabetical/2.0.1
+      is-decimal: registry.npmjs.org/is-decimal/2.0.1
+    dev: false
+
   registry.npmjs.org/is-binary-path/2.1.0:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz}
     name: is-binary-path
@@ -2609,6 +2898,12 @@ packages:
     version: 2.11.0
     dependencies:
       has: registry.npmjs.org/has/1.0.3
+    dev: false
+
+  registry.npmjs.org/is-decimal/2.0.1:
+    resolution: {integrity: sha512-AAB9hiomQs5DXWcRB1rqsxGUstbRroFOPPVAomNk/3XHR5JyEZChOyTWe2oayKnsSsr/kcGqF+z6yuH6HHpN0A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/is-decimal/-/is-decimal-2.0.1.tgz}
+    name: is-decimal
+    version: 2.0.1
     dev: false
 
   registry.npmjs.org/is-docker/2.2.1:
@@ -2657,6 +2952,12 @@ packages:
       is-extglob: registry.npmjs.org/is-extglob/2.1.1
     dev: false
 
+  registry.npmjs.org/is-hexadecimal/2.0.1:
+    resolution: {integrity: sha512-DgZQp241c8oO6cA1SbTEWiXeoxV42vlcJxgH+B3hi1AiqqKruZR3ZGF8In3fj4+/y/7rHvlOZLZtgJ/4ttYGZg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/is-hexadecimal/-/is-hexadecimal-2.0.1.tgz}
+    name: is-hexadecimal
+    version: 2.0.1
+    dev: false
+
   registry.npmjs.org/is-interactive/2.0.0:
     resolution: {integrity: sha512-qP1vozQRI+BMOPcjFzrjXuQvdak2pHNUMZoeG2eRbiSqyvbEf/wQtEOTOX1guk6E3t36RkaqiSt8A/6YElNxLQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/is-interactive/-/is-interactive-2.0.0.tgz}
     name: is-interactive
@@ -2676,6 +2977,14 @@ packages:
     name: is-plain-obj
     version: 4.1.0
     engines: {node: '>=12'}
+    dev: false
+
+  registry.npmjs.org/is-reference/3.0.1:
+    resolution: {integrity: sha512-baJJdQLiYaJdvFbJqXrcGv3WU3QCzBlUcI5QhbesIm6/xPsvmO+2CDoi/GMOFBQEQm+PXkwOPrp9KK5ozZsp2w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/is-reference/-/is-reference-3.0.1.tgz}
+    name: is-reference
+    version: 3.0.1
+    dependencies:
+      '@types/estree': registry.npmjs.org/@types/estree/1.0.0
     dev: false
 
   registry.npmjs.org/is-stream/3.0.0:
@@ -2749,6 +3058,24 @@ packages:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/jsonc-parser/-/jsonc-parser-3.2.0.tgz}
     name: jsonc-parser
     version: 3.2.0
+    dev: false
+
+  registry.npmjs.org/katex/0.13.24:
+    resolution: {integrity: sha512-jZxYuKCma3VS5UuxOx/rFV1QyGSl3Uy/i0kTJF3HgQ5xMinCQVF8Zd4bMY/9aI9b9A2pjIBOsjSSm68ykTAr8w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/katex/-/katex-0.13.24.tgz}
+    name: katex
+    version: 0.13.24
+    hasBin: true
+    dependencies:
+      commander: registry.npmjs.org/commander/8.3.0
+    dev: false
+
+  registry.npmjs.org/katex/0.15.6:
+    resolution: {integrity: sha512-UpzJy4yrnqnhXvRPhjEuLA4lcPn6eRngixW7Q3TJErjg3Aw2PuLFBzTkdUb89UtumxjhHTqL3a5GDGETMSwgJA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/katex/-/katex-0.15.6.tgz}
+    name: katex
+    version: 0.15.6
+    hasBin: true
+    dependencies:
+      commander: registry.npmjs.org/commander/8.3.0
     dev: false
 
   registry.npmjs.org/kind-of/6.0.3:
@@ -2868,6 +3195,13 @@ packages:
       semver: registry.npmjs.org/semver/6.3.0
     dev: false
 
+  registry.npmjs.org/markdown-extensions/1.1.1:
+    resolution: {integrity: sha512-WWC0ZuMzCyDHYCasEGs4IPvLyTGftYwh6wIEOULOF0HXcqZlhwRzrK0w2VUlxWA98xnvb/jszw4ZSkJ6ADpM6Q==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/markdown-extensions/-/markdown-extensions-1.1.1.tgz}
+    name: markdown-extensions
+    version: 1.1.1
+    engines: {node: '>=0.10.0'}
+    dev: false
+
   registry.npmjs.org/markdown-table/3.0.3:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/markdown-table/-/markdown-table-3.0.3.tgz}
     name: markdown-table
@@ -2914,6 +3248,16 @@ packages:
       uvu: registry.npmjs.org/uvu/0.5.6
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  registry.npmjs.org/mdast-util-frontmatter/1.0.1:
+    resolution: {integrity: sha512-JjA2OjxRqAa8wEG8hloD0uTU0kdn8kbtOWpPP94NBkfAlbxn4S8gCGf/9DwFtEeGPXrDcNXdiDjVaRdUFqYokw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/mdast-util-frontmatter/-/mdast-util-frontmatter-1.0.1.tgz}
+    name: mdast-util-frontmatter
+    version: 1.0.1
+    dependencies:
+      '@types/mdast': registry.npmjs.org/@types/mdast/3.0.10
+      mdast-util-to-markdown: registry.npmjs.org/mdast-util-to-markdown/1.5.0
+      micromark-extension-frontmatter: registry.npmjs.org/micromark-extension-frontmatter/1.0.0
     dev: false
 
   registry.npmjs.org/mdast-util-gfm-autolink-literal/1.0.3:
@@ -2979,6 +3323,79 @@ packages:
       mdast-util-gfm-strikethrough: registry.npmjs.org/mdast-util-gfm-strikethrough/1.0.3
       mdast-util-gfm-table: registry.npmjs.org/mdast-util-gfm-table/1.0.7
       mdast-util-gfm-task-list-item: registry.npmjs.org/mdast-util-gfm-task-list-item/1.0.2
+      mdast-util-to-markdown: registry.npmjs.org/mdast-util-to-markdown/1.5.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  registry.npmjs.org/mdast-util-math/2.0.2:
+    resolution: {integrity: sha512-8gmkKVp9v6+Tgjtq6SYx9kGPpTf6FVYRa53/DLh479aldR9AyP48qeVOgNZ5X7QUK7nOy4yw7vg6mbiGcs9jWQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/mdast-util-math/-/mdast-util-math-2.0.2.tgz}
+    name: mdast-util-math
+    version: 2.0.2
+    dependencies:
+      '@types/mdast': registry.npmjs.org/@types/mdast/3.0.10
+      longest-streak: registry.npmjs.org/longest-streak/3.1.0
+      mdast-util-to-markdown: registry.npmjs.org/mdast-util-to-markdown/1.5.0
+    dev: false
+
+  registry.npmjs.org/mdast-util-mdx-expression/1.3.2:
+    resolution: {integrity: sha512-xIPmR5ReJDu/DHH1OoIT1HkuybIfRGYRywC+gJtI7qHjCJp/M9jrmBEJW22O8lskDWm562BX2W8TiAwRTb0rKA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/mdast-util-mdx-expression/-/mdast-util-mdx-expression-1.3.2.tgz}
+    name: mdast-util-mdx-expression
+    version: 1.3.2
+    dependencies:
+      '@types/estree-jsx': registry.npmjs.org/@types/estree-jsx/1.0.0
+      '@types/hast': registry.npmjs.org/@types/hast/2.3.4
+      '@types/mdast': registry.npmjs.org/@types/mdast/3.0.10
+      mdast-util-from-markdown: registry.npmjs.org/mdast-util-from-markdown/1.3.0
+      mdast-util-to-markdown: registry.npmjs.org/mdast-util-to-markdown/1.5.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  registry.npmjs.org/mdast-util-mdx-jsx/2.1.2:
+    resolution: {integrity: sha512-o9vBCYQK5ZLGEj3tCGISJGjvafyHRVJlZmfJzSE7xjiogSzIeph/Z4zMY65q4WGRMezQBeAwPlrdymDYYYx0tA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/mdast-util-mdx-jsx/-/mdast-util-mdx-jsx-2.1.2.tgz}
+    name: mdast-util-mdx-jsx
+    version: 2.1.2
+    dependencies:
+      '@types/estree-jsx': registry.npmjs.org/@types/estree-jsx/1.0.0
+      '@types/hast': registry.npmjs.org/@types/hast/2.3.4
+      '@types/mdast': registry.npmjs.org/@types/mdast/3.0.10
+      '@types/unist': registry.npmjs.org/@types/unist/2.0.6
+      ccount: registry.npmjs.org/ccount/2.0.1
+      mdast-util-from-markdown: registry.npmjs.org/mdast-util-from-markdown/1.3.0
+      mdast-util-to-markdown: registry.npmjs.org/mdast-util-to-markdown/1.5.0
+      parse-entities: registry.npmjs.org/parse-entities/4.0.1
+      stringify-entities: registry.npmjs.org/stringify-entities/4.0.3
+      unist-util-remove-position: registry.npmjs.org/unist-util-remove-position/4.0.2
+      unist-util-stringify-position: registry.npmjs.org/unist-util-stringify-position/3.0.3
+      vfile-message: registry.npmjs.org/vfile-message/3.1.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  registry.npmjs.org/mdast-util-mdx/2.0.1:
+    resolution: {integrity: sha512-38w5y+r8nyKlGvNjSEqWrhG0w5PmnRA+wnBvm+ulYCct7nsGYhFVb0lljS9bQav4psDAS1eGkP2LMVcZBi/aqw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/mdast-util-mdx/-/mdast-util-mdx-2.0.1.tgz}
+    name: mdast-util-mdx
+    version: 2.0.1
+    dependencies:
+      mdast-util-from-markdown: registry.npmjs.org/mdast-util-from-markdown/1.3.0
+      mdast-util-mdx-expression: registry.npmjs.org/mdast-util-mdx-expression/1.3.2
+      mdast-util-mdx-jsx: registry.npmjs.org/mdast-util-mdx-jsx/2.1.2
+      mdast-util-mdxjs-esm: registry.npmjs.org/mdast-util-mdxjs-esm/1.3.1
+      mdast-util-to-markdown: registry.npmjs.org/mdast-util-to-markdown/1.5.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  registry.npmjs.org/mdast-util-mdxjs-esm/1.3.1:
+    resolution: {integrity: sha512-SXqglS0HrEvSdUEfoXFtcg7DRl7S2cwOXc7jkuusG472Mmjag34DUDeOJUZtl+BVnyeO1frIgVpHlNRWc2gk/w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/mdast-util-mdxjs-esm/-/mdast-util-mdxjs-esm-1.3.1.tgz}
+    name: mdast-util-mdxjs-esm
+    version: 1.3.1
+    dependencies:
+      '@types/estree-jsx': registry.npmjs.org/@types/estree-jsx/1.0.0
+      '@types/hast': registry.npmjs.org/@types/hast/2.3.4
+      '@types/mdast': registry.npmjs.org/@types/mdast/3.0.10
+      mdast-util-from-markdown: registry.npmjs.org/mdast-util-from-markdown/1.3.0
       mdast-util-to-markdown: registry.npmjs.org/mdast-util-to-markdown/1.5.0
     transitivePeerDependencies:
       - supports-color
@@ -3065,6 +3482,16 @@ packages:
       micromark-util-symbol: registry.npmjs.org/micromark-util-symbol/1.0.1
       micromark-util-types: registry.npmjs.org/micromark-util-types/1.0.2
       uvu: registry.npmjs.org/uvu/0.5.6
+    dev: false
+
+  registry.npmjs.org/micromark-extension-frontmatter/1.0.0:
+    resolution: {integrity: sha512-EXjmRnupoX6yYuUJSQhrQ9ggK0iQtQlpi6xeJzVD5xscyAI+giqco5fdymayZhJMbIFecjnE2yz85S9NzIgQpg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/micromark-extension-frontmatter/-/micromark-extension-frontmatter-1.0.0.tgz}
+    name: micromark-extension-frontmatter
+    version: 1.0.0
+    dependencies:
+      fault: registry.npmjs.org/fault/2.0.1
+      micromark-util-character: registry.npmjs.org/micromark-util-character/1.1.0
+      micromark-util-symbol: registry.npmjs.org/micromark-util-symbol/1.0.1
     dev: false
 
   registry.npmjs.org/micromark-extension-gfm-autolink-literal/1.0.3:
@@ -3154,6 +3581,88 @@ packages:
       micromark-util-types: registry.npmjs.org/micromark-util-types/1.0.2
     dev: false
 
+  registry.npmjs.org/micromark-extension-math/2.0.2:
+    resolution: {integrity: sha512-cFv2B/E4pFPBBFuGgLHkkNiFAIQv08iDgPH2HCuR2z3AUgMLecES5Cq7AVtwOtZeRrbA80QgMUk8VVW0Z+D2FA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/micromark-extension-math/-/micromark-extension-math-2.0.2.tgz}
+    name: micromark-extension-math
+    version: 2.0.2
+    dependencies:
+      '@types/katex': registry.npmjs.org/@types/katex/0.11.1
+      katex: registry.npmjs.org/katex/0.13.24
+      micromark-factory-space: registry.npmjs.org/micromark-factory-space/1.0.0
+      micromark-util-character: registry.npmjs.org/micromark-util-character/1.1.0
+      micromark-util-symbol: registry.npmjs.org/micromark-util-symbol/1.0.1
+      micromark-util-types: registry.npmjs.org/micromark-util-types/1.0.2
+      uvu: registry.npmjs.org/uvu/0.5.6
+    dev: false
+
+  registry.npmjs.org/micromark-extension-mdx-expression/1.0.4:
+    resolution: {integrity: sha512-TCgLxqW6ReQ3AJgtj1P0P+8ZThBTloLbeb7jNaqr6mCOLDpxUiBFE/9STgooMZttEwOQu5iEcCCa3ZSDhY9FGw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/micromark-extension-mdx-expression/-/micromark-extension-mdx-expression-1.0.4.tgz}
+    name: micromark-extension-mdx-expression
+    version: 1.0.4
+    dependencies:
+      micromark-factory-mdx-expression: registry.npmjs.org/micromark-factory-mdx-expression/1.0.7
+      micromark-factory-space: registry.npmjs.org/micromark-factory-space/1.0.0
+      micromark-util-character: registry.npmjs.org/micromark-util-character/1.1.0
+      micromark-util-events-to-acorn: registry.npmjs.org/micromark-util-events-to-acorn/1.2.1
+      micromark-util-symbol: registry.npmjs.org/micromark-util-symbol/1.0.1
+      micromark-util-types: registry.npmjs.org/micromark-util-types/1.0.2
+      uvu: registry.npmjs.org/uvu/0.5.6
+    dev: false
+
+  registry.npmjs.org/micromark-extension-mdx-jsx/1.0.3:
+    resolution: {integrity: sha512-VfA369RdqUISF0qGgv2FfV7gGjHDfn9+Qfiv5hEwpyr1xscRj/CiVRkU7rywGFCO7JwJ5L0e7CJz60lY52+qOA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/micromark-extension-mdx-jsx/-/micromark-extension-mdx-jsx-1.0.3.tgz}
+    name: micromark-extension-mdx-jsx
+    version: 1.0.3
+    dependencies:
+      '@types/acorn': registry.npmjs.org/@types/acorn/4.0.6
+      estree-util-is-identifier-name: registry.npmjs.org/estree-util-is-identifier-name/2.1.0
+      micromark-factory-mdx-expression: registry.npmjs.org/micromark-factory-mdx-expression/1.0.7
+      micromark-factory-space: registry.npmjs.org/micromark-factory-space/1.0.0
+      micromark-util-character: registry.npmjs.org/micromark-util-character/1.1.0
+      micromark-util-symbol: registry.npmjs.org/micromark-util-symbol/1.0.1
+      micromark-util-types: registry.npmjs.org/micromark-util-types/1.0.2
+      uvu: registry.npmjs.org/uvu/0.5.6
+      vfile-message: registry.npmjs.org/vfile-message/3.1.4
+    dev: false
+
+  registry.npmjs.org/micromark-extension-mdx-md/1.0.0:
+    resolution: {integrity: sha512-xaRAMoSkKdqZXDAoSgp20Azm0aRQKGOl0RrS81yGu8Hr/JhMsBmfs4wR7m9kgVUIO36cMUQjNyiyDKPrsv8gOw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/micromark-extension-mdx-md/-/micromark-extension-mdx-md-1.0.0.tgz}
+    name: micromark-extension-mdx-md
+    version: 1.0.0
+    dependencies:
+      micromark-util-types: registry.npmjs.org/micromark-util-types/1.0.2
+    dev: false
+
+  registry.npmjs.org/micromark-extension-mdxjs-esm/1.0.3:
+    resolution: {integrity: sha512-2N13ol4KMoxb85rdDwTAC6uzs8lMX0zeqpcyx7FhS7PxXomOnLactu8WI8iBNXW8AVyea3KIJd/1CKnUmwrK9A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/micromark-extension-mdxjs-esm/-/micromark-extension-mdxjs-esm-1.0.3.tgz}
+    name: micromark-extension-mdxjs-esm
+    version: 1.0.3
+    dependencies:
+      micromark-core-commonmark: registry.npmjs.org/micromark-core-commonmark/1.0.6
+      micromark-util-character: registry.npmjs.org/micromark-util-character/1.1.0
+      micromark-util-events-to-acorn: registry.npmjs.org/micromark-util-events-to-acorn/1.2.1
+      micromark-util-symbol: registry.npmjs.org/micromark-util-symbol/1.0.1
+      micromark-util-types: registry.npmjs.org/micromark-util-types/1.0.2
+      unist-util-position-from-estree: registry.npmjs.org/unist-util-position-from-estree/1.1.2
+      uvu: registry.npmjs.org/uvu/0.5.6
+      vfile-message: registry.npmjs.org/vfile-message/3.1.4
+    dev: false
+
+  registry.npmjs.org/micromark-extension-mdxjs/1.0.0:
+    resolution: {integrity: sha512-TZZRZgeHvtgm+IhtgC2+uDMR7h8eTKF0QUX9YsgoL9+bADBpBY6SiLvWqnBlLbCEevITmTqmEuY3FoxMKVs1rQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/micromark-extension-mdxjs/-/micromark-extension-mdxjs-1.0.0.tgz}
+    name: micromark-extension-mdxjs
+    version: 1.0.0
+    dependencies:
+      acorn: registry.npmjs.org/acorn/8.8.2
+      acorn-jsx: registry.npmjs.org/acorn-jsx/5.3.2_acorn@8.8.2
+      micromark-extension-mdx-expression: registry.npmjs.org/micromark-extension-mdx-expression/1.0.4
+      micromark-extension-mdx-jsx: registry.npmjs.org/micromark-extension-mdx-jsx/1.0.3
+      micromark-extension-mdx-md: registry.npmjs.org/micromark-extension-mdx-md/1.0.0
+      micromark-extension-mdxjs-esm: registry.npmjs.org/micromark-extension-mdxjs-esm/1.0.3
+      micromark-util-combine-extensions: registry.npmjs.org/micromark-util-combine-extensions/1.0.0
+      micromark-util-types: registry.npmjs.org/micromark-util-types/1.0.2
+    dev: false
+
   registry.npmjs.org/micromark-factory-destination/1.0.0:
     resolution: {integrity: sha512-eUBA7Rs1/xtTVun9TmV3gjfPz2wEwgK5R5xcbIM5ZYAtvGF6JkyaDsj0agx8urXnO31tEO6Ug83iVH3tdedLnw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/micromark-factory-destination/-/micromark-factory-destination-1.0.0.tgz}
     name: micromark-factory-destination
@@ -3173,6 +3682,21 @@ packages:
       micromark-util-symbol: registry.npmjs.org/micromark-util-symbol/1.0.1
       micromark-util-types: registry.npmjs.org/micromark-util-types/1.0.2
       uvu: registry.npmjs.org/uvu/0.5.6
+    dev: false
+
+  registry.npmjs.org/micromark-factory-mdx-expression/1.0.7:
+    resolution: {integrity: sha512-QAdFbkQagTZ/eKb8zDGqmjvgevgJH3+aQpvvKrXWxNJp3o8/l2cAbbrBd0E04r0Gx6nssPpqWIjnbHFvZu5qsQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/micromark-factory-mdx-expression/-/micromark-factory-mdx-expression-1.0.7.tgz}
+    name: micromark-factory-mdx-expression
+    version: 1.0.7
+    dependencies:
+      micromark-factory-space: registry.npmjs.org/micromark-factory-space/1.0.0
+      micromark-util-character: registry.npmjs.org/micromark-util-character/1.1.0
+      micromark-util-events-to-acorn: registry.npmjs.org/micromark-util-events-to-acorn/1.2.1
+      micromark-util-symbol: registry.npmjs.org/micromark-util-symbol/1.0.1
+      micromark-util-types: registry.npmjs.org/micromark-util-types/1.0.2
+      unist-util-position-from-estree: registry.npmjs.org/unist-util-position-from-estree/1.1.2
+      uvu: registry.npmjs.org/uvu/0.5.6
+      vfile-message: registry.npmjs.org/vfile-message/3.1.4
     dev: false
 
   registry.npmjs.org/micromark-factory-space/1.0.0:
@@ -3266,6 +3790,20 @@ packages:
     resolution: {integrity: sha512-U2s5YdnAYexjKDel31SVMPbfi+eF8y1U4pfiRW/Y8EFVCy/vgxk/2wWTxzcqE71LHtCuCzlBDRU2a5CQ5j+mQA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/micromark-util-encode/-/micromark-util-encode-1.0.1.tgz}
     name: micromark-util-encode
     version: 1.0.1
+    dev: false
+
+  registry.npmjs.org/micromark-util-events-to-acorn/1.2.1:
+    resolution: {integrity: sha512-mkg3BaWlw6ZTkQORrKVBW4o9ICXPxLtGz51vml5mQpKFdo9vqIX68CAx5JhTOdjQyAHH7JFmm4rh8toSPQZUmg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/micromark-util-events-to-acorn/-/micromark-util-events-to-acorn-1.2.1.tgz}
+    name: micromark-util-events-to-acorn
+    version: 1.2.1
+    dependencies:
+      '@types/acorn': registry.npmjs.org/@types/acorn/4.0.6
+      '@types/estree': registry.npmjs.org/@types/estree/1.0.0
+      estree-util-visit: registry.npmjs.org/estree-util-visit/1.2.1
+      micromark-util-types: registry.npmjs.org/micromark-util-types/1.0.2
+      uvu: registry.npmjs.org/uvu/0.5.6
+      vfile-location: registry.npmjs.org/vfile-location/4.1.0
+      vfile-message: registry.npmjs.org/vfile-message/3.1.4
     dev: false
 
   registry.npmjs.org/micromark-util-html-tag-name/1.1.0:
@@ -3419,6 +3957,12 @@ packages:
     dependencies:
       minipass: registry.npmjs.org/minipass/3.3.6
       yallist: registry.npmjs.org/yallist/4.0.0
+    dev: false
+
+  registry.npmjs.org/mitt/3.0.0:
+    resolution: {integrity: sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/mitt/-/mitt-3.0.0.tgz}
+    name: mitt
+    version: 3.0.0
     dev: false
 
   registry.npmjs.org/mkdirp/1.0.4:
@@ -3640,6 +4184,21 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
+  registry.npmjs.org/parse-entities/4.0.1:
+    resolution: {integrity: sha512-SWzvYcSJh4d/SGLIOQfZ/CoNv6BTlI6YEQ7Nj82oDVnRpwe/Z/F1EMx42x3JAOwGBlCjeCH0BRJQbQ/opHL17w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/parse-entities/-/parse-entities-4.0.1.tgz}
+    name: parse-entities
+    version: 4.0.1
+    dependencies:
+      '@types/unist': registry.npmjs.org/@types/unist/2.0.6
+      character-entities: registry.npmjs.org/character-entities/2.0.2
+      character-entities-legacy: registry.npmjs.org/character-entities-legacy/3.0.0
+      character-reference-invalid: registry.npmjs.org/character-reference-invalid/2.0.1
+      decode-named-character-reference: registry.npmjs.org/decode-named-character-reference/1.0.2
+      is-alphanumerical: registry.npmjs.org/is-alphanumerical/2.0.1
+      is-decimal: registry.npmjs.org/is-decimal/2.0.1
+      is-hexadecimal: registry.npmjs.org/is-hexadecimal/2.0.1
+    dev: false
+
   registry.npmjs.org/parse-latin/5.0.1:
     resolution: {integrity: sha512-b/K8ExXaWC9t34kKeDV8kGXBkXZ1HCSAZRYE7HR14eA1GlXX5L8iWhs8USJNhQU9q5ci413jCKF0gOyovvyRBg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/parse-latin/-/parse-latin-5.0.1.tgz}
     name: parse-latin
@@ -3694,6 +4253,16 @@ packages:
     resolution: {integrity: sha512-JLyh7xT1kizaEvcaXOQwOc2/Yhw6KZOvPf1S8401UyLk86CU79LN3vl7ztXGm/pZ+YjoyAJ4rxmHwbkBXJX+yw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-6.2.1.tgz}
     name: path-to-regexp
     version: 6.2.1
+    dev: false
+
+  registry.npmjs.org/periscopic/3.1.0:
+    resolution: {integrity: sha512-vKiQ8RRtkl9P+r/+oefh25C3fhybptkHKCZSPlcXiJux2tJF55GnEj3BVn4A5gKfq9NWWXXrxkHBwVPUfH0opw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/periscopic/-/periscopic-3.1.0.tgz}
+    name: periscopic
+    version: 3.1.0
+    dependencies:
+      '@types/estree': registry.npmjs.org/@types/estree/1.0.0
+      estree-walker: registry.npmjs.org/estree-walker/3.0.3
+      is-reference: registry.npmjs.org/is-reference/3.0.1
     dev: false
 
   registry.npmjs.org/picocolors/1.0.0:
@@ -3936,6 +4505,21 @@ packages:
       picomatch: registry.npmjs.org/picomatch/2.3.1
     dev: false
 
+  registry.npmjs.org/rehype-katex/6.0.2:
+    resolution: {integrity: sha512-C4gDAlS1+l0hJqctyiU64f9CvT00S03qV1T6HiMzbSuLBgWUtcqydWHY9OpKrm0SpkK16FNd62CDKyWLwV2ppg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/rehype-katex/-/rehype-katex-6.0.2.tgz}
+    name: rehype-katex
+    version: 6.0.2
+    dependencies:
+      '@types/hast': registry.npmjs.org/@types/hast/2.3.4
+      '@types/katex': registry.npmjs.org/@types/katex/0.11.1
+      hast-util-to-text: registry.npmjs.org/hast-util-to-text/3.1.2
+      katex: registry.npmjs.org/katex/0.15.6
+      rehype-parse: registry.npmjs.org/rehype-parse/8.0.4
+      unified: registry.npmjs.org/unified/10.1.2
+      unist-util-remove-position: registry.npmjs.org/unist-util-remove-position/4.0.2
+      unist-util-visit: registry.npmjs.org/unist-util-visit/4.1.2
+    dev: false
+
   registry.npmjs.org/rehype-parse/8.0.4:
     resolution: {integrity: sha512-MJJKONunHjoTh4kc3dsM1v3C9kGrrxvA3U8PxZlP2SjH8RNUSrb+lF7Y0KVaUDnGH2QZ5vAn7ulkiajM9ifuqg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/rehype-parse/-/rehype-parse-8.0.4.tgz}
     name: rehype-parse
@@ -3978,6 +4562,17 @@ packages:
       unified: registry.npmjs.org/unified/10.1.2
     dev: false
 
+  registry.npmjs.org/remark-frontmatter/4.0.1:
+    resolution: {integrity: sha512-38fJrB0KnmD3E33a5jZC/5+gGAC2WKNiPw1/fdXJvijBlhA7RCsvJklrYJakS0HedninvaCYW8lQGf9C918GfA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/remark-frontmatter/-/remark-frontmatter-4.0.1.tgz}
+    name: remark-frontmatter
+    version: 4.0.1
+    dependencies:
+      '@types/mdast': registry.npmjs.org/@types/mdast/3.0.10
+      mdast-util-frontmatter: registry.npmjs.org/mdast-util-frontmatter/1.0.1
+      micromark-extension-frontmatter: registry.npmjs.org/micromark-extension-frontmatter/1.0.0
+      unified: registry.npmjs.org/unified/10.1.2
+    dev: false
+
   registry.npmjs.org/remark-gfm/3.0.1:
     resolution: {integrity: sha512-lEFDoi2PICJyNrACFOfDD3JlLkuSbOa5Wd8EPt06HUdptv8Gn0bxYTdbU/XXQ3swAPkEaGxxPN9cbnMHvVu1Ig==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/remark-gfm/-/remark-gfm-3.0.1.tgz}
     name: remark-gfm
@@ -3987,6 +4582,28 @@ packages:
       mdast-util-gfm: registry.npmjs.org/mdast-util-gfm/2.0.2
       micromark-extension-gfm: registry.npmjs.org/micromark-extension-gfm/2.0.1
       unified: registry.npmjs.org/unified/10.1.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  registry.npmjs.org/remark-math/5.1.1:
+    resolution: {integrity: sha512-cE5T2R/xLVtfFI4cCePtiRn+e6jKMtFDR3P8V3qpv8wpKjwvHoBA4eJzvX+nVrnlNy0911bdGmuspCSwetfYHw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/remark-math/-/remark-math-5.1.1.tgz}
+    name: remark-math
+    version: 5.1.1
+    dependencies:
+      '@types/mdast': registry.npmjs.org/@types/mdast/3.0.10
+      mdast-util-math: registry.npmjs.org/mdast-util-math/2.0.2
+      micromark-extension-math: registry.npmjs.org/micromark-extension-math/2.0.2
+      unified: registry.npmjs.org/unified/10.1.2
+    dev: false
+
+  registry.npmjs.org/remark-mdx/2.3.0:
+    resolution: {integrity: sha512-g53hMkpM0I98MU266IzDFMrTD980gNF3BJnkyFcmN+dD873mQeD5rdMO3Y2X+x8umQfbSE0PcoEDl7ledSA+2g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/remark-mdx/-/remark-mdx-2.3.0.tgz}
+    name: remark-mdx
+    version: 2.3.0
+    dependencies:
+      mdast-util-mdx: registry.npmjs.org/mdast-util-mdx/2.0.1
+      micromark-extension-mdxjs: registry.npmjs.org/micromark-extension-mdxjs/1.0.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -4381,6 +4998,14 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
+  registry.npmjs.org/style-to-object/0.4.1:
+    resolution: {integrity: sha512-HFpbb5gr2ypci7Qw+IOhnP2zOU7e77b+rzM+wTzXzfi1PrtBCX0E7Pk4wL4iTLnhzZ+JgEGAhX81ebTg/aYjQw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/style-to-object/-/style-to-object-0.4.1.tgz}
+    name: style-to-object
+    version: 0.4.1
+    dependencies:
+      inline-style-parser: registry.npmjs.org/inline-style-parser/0.1.1
+    dev: false
+
   registry.npmjs.org/suf-log/2.5.3:
     resolution: {integrity: sha512-KvC8OPjzdNOe+xQ4XWJV2whQA0aM1kGVczMQ8+dStAO6KfEB140JEVQ9dE76ONZ0/Ylf67ni4tILPJB41U0eow==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/suf-log/-/suf-log-2.5.3.tgz}
     name: suf-log
@@ -4608,6 +5233,15 @@ packages:
       vfile: registry.npmjs.org/vfile/5.3.7
     dev: false
 
+  registry.npmjs.org/unist-util-find-after/4.0.1:
+    resolution: {integrity: sha512-QO/PuPMm2ERxC6vFXEPtmAutOopy5PknD+Oq64gGwxKtk4xwo9Z97t9Av1obPmGU0IyTa6EKYUfTrK2QJS3Ozw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/unist-util-find-after/-/unist-util-find-after-4.0.1.tgz}
+    name: unist-util-find-after
+    version: 4.0.1
+    dependencies:
+      '@types/unist': registry.npmjs.org/@types/unist/2.0.6
+      unist-util-is: registry.npmjs.org/unist-util-is/5.2.0
+    dev: false
+
   registry.npmjs.org/unist-util-generated/2.0.1:
     resolution: {integrity: sha512-qF72kLmPxAw0oN2fwpWIqbXAVyEqUzDHMsbtPvOudIlUzXYFIeQIuxXQCRCFh22B7cixvU0MG7m3MW8FTq/S+A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/unist-util-generated/-/unist-util-generated-2.0.1.tgz}
     name: unist-util-generated
@@ -4629,12 +5263,29 @@ packages:
       array-iterate: registry.npmjs.org/array-iterate/2.0.1
     dev: false
 
+  registry.npmjs.org/unist-util-position-from-estree/1.1.2:
+    resolution: {integrity: sha512-poZa0eXpS+/XpoQwGwl79UUdea4ol2ZuCYguVaJS4qzIOMDzbqz8a3erUCOmubSZkaOuGamb3tX790iwOIROww==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/unist-util-position-from-estree/-/unist-util-position-from-estree-1.1.2.tgz}
+    name: unist-util-position-from-estree
+    version: 1.1.2
+    dependencies:
+      '@types/unist': registry.npmjs.org/@types/unist/2.0.6
+    dev: false
+
   registry.npmjs.org/unist-util-position/4.0.4:
     resolution: {integrity: sha512-kUBE91efOWfIVBo8xzh/uZQ7p9ffYRtUbMRZBNFYwf0RK8koUMx6dGUfwylLOKmaT2cs4wSW96QoYUSXAyEtpg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/unist-util-position/-/unist-util-position-4.0.4.tgz}
     name: unist-util-position
     version: 4.0.4
     dependencies:
       '@types/unist': registry.npmjs.org/@types/unist/2.0.6
+    dev: false
+
+  registry.npmjs.org/unist-util-remove-position/4.0.2:
+    resolution: {integrity: sha512-TkBb0HABNmxzAcfLf4qsIbFbaPDvMO6wa3b3j4VcEzFVaw1LBKwnW4/sRJ/atSLSzoIg41JWEdnE7N6DIhGDGQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/unist-util-remove-position/-/unist-util-remove-position-4.0.2.tgz}
+    name: unist-util-remove-position
+    version: 4.0.2
+    dependencies:
+      '@types/unist': registry.npmjs.org/@types/unist/2.0.6
+      unist-util-visit: registry.npmjs.org/unist-util-visit/4.1.2
     dev: false
 
   registry.npmjs.org/unist-util-stringify-position/3.0.3:
@@ -4703,6 +5354,20 @@ packages:
       diff: registry.npmjs.org/diff/5.1.0
       kleur: registry.npmjs.org/kleur/4.1.5
       sade: registry.npmjs.org/sade/1.8.1
+    dev: false
+
+  registry.npmjs.org/v-network-graph/0.8.1_vue@3.2.47:
+    resolution: {integrity: sha512-eJjTIBizCTeF5u/ddYUDIgMae4/uNoAYOBYyNDGO1yOxdlDGZpt5O4X6PNRgxMUrlFrdrMQ1L+aawGiTH0SaHQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/v-network-graph/-/v-network-graph-0.8.1.tgz}
+    id: registry.npmjs.org/v-network-graph/0.8.1
+    name: v-network-graph
+    version: 0.8.1
+    peerDependencies:
+      d3-force: ^3.0.0
+      vue: ^3.2.45
+    dependencies:
+      '@dash14/svg-pan-zoom': registry.npmjs.org/@dash14/svg-pan-zoom/3.6.9
+      mitt: registry.npmjs.org/mitt/3.0.0
+      vue: registry.npmjs.org/vue/3.2.47
     dev: false
 
   registry.npmjs.org/vfile-location/4.1.0:
