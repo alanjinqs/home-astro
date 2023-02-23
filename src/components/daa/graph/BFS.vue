@@ -160,6 +160,7 @@ watch(
     }
     graph.nodes[codeGlobalVariables.s].color = "#e87d35";
     graph.nodes[codeGlobalVariables.s].name = `${codeGlobalVariables.s} (s)`;
+    codes.codes[0].line = `s = ${codeGlobalVariables.s}`;
   }
 );
 
