@@ -195,7 +195,7 @@ const codes = [
   },
   {
     index: 3,
-    line: "Q = ∅",
+    line: "Q = []",
     func: () => {
       codeGlobalVariables.Q = [];
       return 4;
@@ -336,6 +336,7 @@ const doCode = () => {
       <div class="p-4 text-sm">
         <p
           v-for="line in codes"
+          :key="line.index"
           :class="[
             line.index == currentCodeIndex ? 'text-highlight font-bold' : '',
             'whitespace-pre-wrap',
