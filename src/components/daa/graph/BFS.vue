@@ -349,7 +349,7 @@ const doCode = () => {
         </p>
       </div>
     </div>
-    <div class="whitespace-pre-wrap text-sm opacity-75">
+    <div class="whitespace-pre-wrap text-sm opacity-75 w-full overflow-x-auto bg-white dark:bg-black p-4">
       <code>d: {{ JSON.stringify(codeGlobalVariables.d) }}</code>
       <br />
       <code>π: {{ JSON.stringify(codeGlobalVariables.π) }} </code>
