@@ -163,121 +163,123 @@ watch(
   }
 );
 
-const codes = [
-  {
-    index: 0,
-    line: `s = ${codeGlobalVariables.s}`,
-    func: () => {
-      return 1;
+const codes = reactive({
+  codes: [
+    {
+      index: 0,
+      line: `s = ${codeGlobalVariables.s}`,
+      func: () => {
+        return 1;
+      },
     },
-  },
-  {
-    index: 1,
-    line: "d[s] = 0; π[s] = nil",
-    func: () => {
-      codeGlobalVariables.d[codeGlobalVariables.s] = 0;
-      codeGlobalVariables.π[codeGlobalVariables.s] = null;
-      return 2;
+    {
+      index: 1,
+      line: "d[s] = 0; π[s] = nil",
+      func: () => {
+        codeGlobalVariables.d[codeGlobalVariables.s] = 0;
+        codeGlobalVariables.π[codeGlobalVariables.s] = null;
+        return 2;
+      },
     },
-  },
-  {
-    index: 2,
-    line: "for each u ∈ V − { s }: \n \td[u] = ∞\n\tπ[u] = nil\n}",
-    func: () => {
-      for (const node of Object.keys(graph.adjacencyList)) {
-        if (node !== codeGlobalVariables.s) {
-          codeGlobalVariables.d[node] = INF;
-          codeGlobalVariables.π[node] = null;
+    {
+      index: 2,
+      line: "for each u ∈ V − { s }: \n \td[u] = ∞\n\tπ[u] = nil\n}",
+      func: () => {
+        for (const node of Object.keys(graph.adjacencyList)) {
+          if (node !== codeGlobalVariables.s) {
+            codeGlobalVariables.d[node] = INF;
+            codeGlobalVariables.π[node] = null;
+          }
         }
-      }
-      return 3;
+        return 3;
+      },
     },
-  },
-  {
-    index: 3,
-    line: "Q = []",
-    func: () => {
-      codeGlobalVariables.Q = [];
-      return 4;
+    {
+      index: 3,
+      line: "Q = []",
+      func: () => {
+        codeGlobalVariables.Q = [];
+        return 4;
+      },
     },
-  },
-  {
-    index: 4,
-    line: "Q.Enqueue(s)",
-    func: () => {
-      codeGlobalVariables.Q.push(codeGlobalVariables.s);
-      return 5;
-    },
-  },
-  {
-    index: 5,
-    line: "while Q.length !== 0:",
-    func: () => {
-      if (codeGlobalVariables.Q.length === 0) return -1;
-      return 6;
-    },
-  },
-  {
-    index: 6,
-    line: "\tu = Q.Dequeue()",
-    func: () => {
-      codeGlobalVariables.u = codeGlobalVariables.Q.shift();
-      codeGlobalVariables.forEachLoopHelper = -1;
-      return 7;
-    },
-  },
-  {
-    index: 7,
-    line: "\tfor each v ∈ Adj[u]",
-    func: () => {
-      codeGlobalVariables.forEachLoopHelper += 1;
-      if (
-        codeGlobalVariables.forEachLoopHelper >=
-        graph.adjacencyList[codeGlobalVariables.u].length
-      ) {
+    {
+      index: 4,
+      line: "Q.Enqueue(s)",
+      func: () => {
+        codeGlobalVariables.Q.push(codeGlobalVariables.s);
         return 5;
-      }
-      codeGlobalVariables.v =
-        graph.adjacencyList[codeGlobalVariables.u][
-          codeGlobalVariables.forEachLoopHelper
-        ];
-      return 8;
+      },
     },
-  },
-  {
-    index: 8,
-    line: "\t\tif d[v] = inf",
-    func: () => {
-      if (codeGlobalVariables.d[codeGlobalVariables.v] === INF) return 9;
-      return 7;
+    {
+      index: 5,
+      line: "while Q.length !== 0:",
+      func: () => {
+        if (codeGlobalVariables.Q.length === 0) return -1;
+        return 6;
+      },
     },
-  },
-  {
-    index: 9,
-    line: "\t\td[v] = d[u] + 1",
-    func: () => {
-      codeGlobalVariables.d[codeGlobalVariables.v] =
-        codeGlobalVariables.d[codeGlobalVariables.u] + 1;
-      return 10;
+    {
+      index: 6,
+      line: "\tu = Q.Dequeue()",
+      func: () => {
+        codeGlobalVariables.u = codeGlobalVariables.Q.shift();
+        codeGlobalVariables.forEachLoopHelper = -1;
+        return 7;
+      },
     },
-  },
-  {
-    index: 10,
-    line: "\t\tπ[v] = u",
-    func: () => {
-      codeGlobalVariables.π[codeGlobalVariables.v] = codeGlobalVariables.u;
-      return 11;
+    {
+      index: 7,
+      line: "\tfor each v ∈ Adj[u]",
+      func: () => {
+        codeGlobalVariables.forEachLoopHelper += 1;
+        if (
+          codeGlobalVariables.forEachLoopHelper >=
+          graph.adjacencyList[codeGlobalVariables.u].length
+        ) {
+          return 5;
+        }
+        codeGlobalVariables.v =
+          graph.adjacencyList[codeGlobalVariables.u][
+            codeGlobalVariables.forEachLoopHelper
+          ];
+        return 8;
+      },
     },
-  },
-  {
-    index: 11,
-    line: "\t\tQ.Enqueue(v)",
-    func: () => {
-      codeGlobalVariables.Q.push(codeGlobalVariables.v);
-      return 7;
+    {
+      index: 8,
+      line: "\t\tif d[v] = inf",
+      func: () => {
+        if (codeGlobalVariables.d[codeGlobalVariables.v] === INF) return 9;
+        return 7;
+      },
     },
-  },
-];
+    {
+      index: 9,
+      line: "\t\td[v] = d[u] + 1",
+      func: () => {
+        codeGlobalVariables.d[codeGlobalVariables.v] =
+          codeGlobalVariables.d[codeGlobalVariables.u] + 1;
+        return 10;
+      },
+    },
+    {
+      index: 10,
+      line: "\t\tπ[v] = u",
+      func: () => {
+        codeGlobalVariables.π[codeGlobalVariables.v] = codeGlobalVariables.u;
+        return 11;
+      },
+    },
+    {
+      index: 11,
+      line: "\t\tQ.Enqueue(v)",
+      func: () => {
+        codeGlobalVariables.Q.push(codeGlobalVariables.v);
+        return 7;
+      },
+    },
+  ],
+});
 
 const currentCodeIndex = ref(0);
 const doCode = () => {
@@ -335,7 +337,7 @@ const doCode = () => {
       </div>
       <div class="p-4 text-sm">
         <p
-          v-for="line in codes"
+          v-for="line in codes.codes"
           :key="line.index"
           :class="[
             line.index == currentCodeIndex ? 'text-highlight font-bold' : '',
