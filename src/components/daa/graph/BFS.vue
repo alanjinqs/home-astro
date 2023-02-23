@@ -139,12 +139,12 @@ watch(
   () => codeGlobalVariables.v,
   () => {
     for (const node of Object.keys(graph.nodes)) {
-      if (graph.nodes[node].color == "#abdbe3") {
+      if (graph.nodes[node].color == "#da8246") {
         graph.nodes[node].color = "#f3bd7f";
         graph.nodes[node].name = node;
       }
     }
-    graph.nodes[codeGlobalVariables.v].color = "#abdbe3";
+    graph.nodes[codeGlobalVariables.v].color = "#da8246";
     graph.nodes[codeGlobalVariables.v].name = `${codeGlobalVariables.v} (v)`;
   }
 );
