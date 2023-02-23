@@ -284,7 +284,7 @@ const codes = reactive({
 
 const currentCodeIndex = ref(0);
 const doCode = () => {
-  const code = codes[currentCodeIndex.value];
+  const code = codes.codes[currentCodeIndex.value];
   if (code) {
     const nextIndex = code.func();
     currentCodeIndex.value = nextIndex;
