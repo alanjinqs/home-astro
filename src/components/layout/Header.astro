@@ -25,16 +25,16 @@ const headerButtonList = [
   {
     headerButtonList.map((item) => {
       if (
-        Astro.url.pathname.length === 1
+        item.link.length === 1
           ? Astro.url.pathname === item.link
-          : item.link.includes(Astro.url.pathname)
+          : Astro.url.pathname.includes(item.link)
       ) {
         return (
           <a
             href={item.link}
             class="w-min pb-1 pr-4 text-left md:pr-0 text-highlight"
           >
-            {item.title} {}
+            {item.title}
           </a>
         );
       } else {
