@@ -37,6 +37,12 @@
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
 body {
   font-family: Ubuntu, sans-serif;
 }
