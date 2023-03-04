@@ -83,22 +83,22 @@ const graph = reactive({
 
 const codeGlobalVariables = reactive({
   d: {},
+  f: {},
   π: {},
-  Q: [],
+  color: {},
   s: "C",
   u: "",
   v: "",
-  forEachLoopHelper: -1,
+  time: 0,
+  forEachLoopHelper1: -1,
+  forEachLoopHelper2: -1,
+  forEachLoopHelper3: -1,
 });
 
 // write nodes and edges by the graph dict above
 const adjacencyListToGraph = () => {
   for (const [node, edges] of Object.entries(graph.adjacencyList)) {
     graph.nodes[node] = { name: node, color: "#f3bd7f" };
-    if (node === codeGlobalVariables.s) {
-      graph.nodes[node].color = "#e87d35";
-      graph.nodes[node].name = `${node} (s)`;
-    }
     for (const edge of edges) {
       graph.edges[`${node}-${edge}`] = { source: node, target: edge };
     }
@@ -136,21 +136,6 @@ watch(
   }
 );
 
-watch(
-  () => codeGlobalVariables.s,
-  () => {
-    for (const node of Object.keys(graph.nodes)) {
-      if (graph.nodes[node].color == "#e87d35") {
-        graph.nodes[node].color = "#f3bd7f";
-        graph.nodes[node].name = node;
-      }
-    }
-    graph.nodes[codeGlobalVariables.s].color = "#e87d35";
-    graph.nodes[codeGlobalVariables.s].name = `${codeGlobalVariables.s} (s)`;
-    codes.codes[0].line = `s = ${codeGlobalVariables.s}`;
-  }
-);
-
 const addNode = () => {
   const node = String.fromCharCode(65 + Object.keys(graph.nodes).length);
   graph.nodes[node] = { name: node, color: "#f3bd7f" };
@@ -163,127 +148,62 @@ const addEdge = (sourceName: string, targetName: string) => {
     source: sourceName,
     target: targetName,
   };
-  configs.edge.marker.target.type = "none"
-  setTimeout(()=>{
-    configs.edge.marker.target.type = "arrow"
-  }, 1)
+  configs.edge.marker.target.type = "none";
+  setTimeout(() => {
+    configs.edge.marker.target.type = "arrow";
+  }, 1);
 };
 
 const codes = reactive({
   codes: [
     {
       index: 0,
-      line: `s = ${codeGlobalVariables.s}`,
+      line: 'for u ∈ V\n\tcolor[u] = "white"\n\tπ[u] = NIL',
       func: () => {
+        for (const node of Object.keys(graph.nodes)) {
+          codeGlobalVariables.π[node] = "NIL";
+          codeGlobalVariables.color[node] = "white";
+        }
         return 1;
       },
     },
     {
       index: 1,
-      line: "d[s] = 0; π[s] = nil",
+      line: "time = 0",
       func: () => {
-        codeGlobalVariables.d[codeGlobalVariables.s] = 0;
-        codeGlobalVariables.π[codeGlobalVariables.s] = null;
+        codeGlobalVariables.time = 0;
         return 2;
       },
     },
     {
       index: 2,
-      line: "for each u ∈ V − { s }: \n \td[u] = ∞\n\tπ[u] = nil",
+      line: 'for u ∈ V',
       func: () => {
-        for (const node of Object.keys(graph.adjacencyList)) {
-          if (node !== codeGlobalVariables.s) {
-            codeGlobalVariables.d[node] = INF;
-            codeGlobalVariables.π[node] = null;
-          }
+        codeGlobalVariables.forEachLoopHelper1 += 1;
+        if(codeGlobalVariables.forEachLoopHelper1 < Object.keys(graph.adjacencyList).length) {
+          codeGlobalVariables.u = Object.keys(graph.adjacencyList)[codeGlobalVariables.forEachLoopHelper1];
+          return 3;
         }
-        return 3;
+        return -1;
       },
     },
     {
       index: 3,
-      line: "Q = []",
+      line: '\tif color[u] == "white"',
       func: () => {
-        codeGlobalVariables.Q = [];
-        return 4;
+        if(codeGlobalVariables.color[codeGlobalVariables.u] == "white") {
+          return 4;
+        }
+        return 2;
       },
     },
     {
       index: 4,
-      line: "Q.Enqueue(s)",
+      line: '\t\tDFS-VISIT(u)',
       func: () => {
-        codeGlobalVariables.Q.push(codeGlobalVariables.s);
         return 5;
       },
-    },
-    {
-      index: 5,
-      line: "while Q.length !== 0:",
-      func: () => {
-        if (codeGlobalVariables.Q.length === 0) return -1;
-        return 6;
-      },
-    },
-    {
-      index: 6,
-      line: "\tu = Q.Dequeue()",
-      func: () => {
-        codeGlobalVariables.u = codeGlobalVariables.Q.shift();
-        codeGlobalVariables.forEachLoopHelper = -1;
-        return 7;
-      },
-    },
-    {
-      index: 7,
-      line: "\tfor each v ∈ Adj[u]",
-      func: () => {
-        codeGlobalVariables.forEachLoopHelper += 1;
-        if (
-          codeGlobalVariables.forEachLoopHelper >=
-          graph.adjacencyList[codeGlobalVariables.u].length
-        ) {
-          return 5;
-        }
-        codeGlobalVariables.v =
-          graph.adjacencyList[codeGlobalVariables.u][
-            codeGlobalVariables.forEachLoopHelper
-          ];
-        return 8;
-      },
-    },
-    {
-      index: 8,
-      line: "\t\tif d[v] = inf",
-      func: () => {
-        if (codeGlobalVariables.d[codeGlobalVariables.v] === INF) return 9;
-        return 7;
-      },
-    },
-    {
-      index: 9,
-      line: "\t\t\td[v] = d[u] + 1",
-      func: () => {
-        codeGlobalVariables.d[codeGlobalVariables.v] =
-          codeGlobalVariables.d[codeGlobalVariables.u] + 1;
-        return 10;
-      },
-    },
-    {
-      index: 10,
-      line: "\t\t\tπ[v] = u",
-      func: () => {
-        codeGlobalVariables.π[codeGlobalVariables.v] = codeGlobalVariables.u;
-        return 11;
-      },
-    },
-    {
-      index: 11,
-      line: "\t\t\tQ.Enqueue(v)",
-      func: () => {
-        codeGlobalVariables.Q.push(codeGlobalVariables.v);
-        return 7;
-      },
-    },
+    }
   ],
 });
 
@@ -296,15 +216,9 @@ const doCode = () => {
     if (nextIndex === -1) {
       for (const node of Object.keys(graph.nodes)) {
         graph.nodes[node].color = "#f3bd7f";
-        graph.nodes[node].name =
-          node +
-          " (d = " +
-          (codeGlobalVariables.d[node] == INF
-            ? "inf"
-            : codeGlobalVariables.d[node]) +
-          ", π = " +
-          codeGlobalVariables.π[node] +
-          ")";
+        graph.nodes[
+          node
+        ].name = `${node} (d = ${codeGlobalVariables.d[node]}, f = ${codeGlobalVariables.f[node]}, π = ${codeGlobalVariables.π[node]})`;
       }
     }
   }
@@ -337,17 +251,6 @@ const doCodeWithInterval = () => {
           Run all lines
         </button>
       </div>
-      <p class="ml-4 mr-2" v-if="currentCodeIndex == 0">s(source) =</p>
-      <select
-        v-if="currentCodeIndex == 0"
-        class="px-4 dark:invert bg-white text-black"
-        placeholder="s (source) = "
-        v-model="codeGlobalVariables.s"
-      >
-        <option v-for="node in Object.keys(graph.nodes)" :value="node">
-          {{ node }}
-        </option>
-      </select>
     </div>
     <div class="flex items-center flex-col sm:flex-row justify-center gap-4">
       <div>
@@ -381,11 +284,15 @@ const doCodeWithInterval = () => {
     <div
       class="whitespace-pre-wrap text-sm opacity-75 w-full overflow-x-auto bg-white dark:bg-black p-4"
     >
+      <code>current time: {{ JSON.stringify(codeGlobalVariables.time) }} </code>
+      <br />
       <code>d: {{ JSON.stringify(codeGlobalVariables.d) }}</code>
+      <br />
+      <code>f: {{ JSON.stringify(codeGlobalVariables.f) }}</code>
       <br />
       <code>π: {{ JSON.stringify(codeGlobalVariables.π) }} </code>
       <br />
-      <code>Q: {{ JSON.stringify(codeGlobalVariables.Q) }}</code>
+      <code>color: {{ JSON.stringify(codeGlobalVariables.color) }} </code>
       <br />
     </div>
   </div>

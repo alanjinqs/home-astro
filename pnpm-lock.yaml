@@ -5,9 +5,16 @@ specifiers:
   '@astrojs/tailwind': ^3.0.1
   '@astrojs/vercel': ^3.1.2
   '@astrojs/vue': ^2.0.1
+  '@fullcalendar/core': ^6.1.4
+  '@fullcalendar/daygrid': ^6.1.4
+  '@fullcalendar/icalendar': ^6.1.4
+  '@fullcalendar/interaction': ^6.1.4
+  '@fullcalendar/timegrid': ^6.1.4
+  '@fullcalendar/vue3': ^6.1.4
   '@yeger/vue-masonry-wall': ^3.4.3
   astro: ^2.0.14
   dayjs: ^1.11.7
+  ical.js: ^1.5.0
   rehype-katex: ^6.0.2
   remark-math: ^5.1.1
   tailwindcss: ^3.0.24
@@ -19,9 +26,16 @@ dependencies:
   '@astrojs/tailwind': registry.npmjs.org/@astrojs/tailwind/3.0.1_hf2kjfio2dr6w52rh4mpociq2u
   '@astrojs/vercel': registry.npmjs.org/@astrojs/vercel/3.1.2_astro@2.0.14
   '@astrojs/vue': registry.npmjs.org/@astrojs/vue/2.0.1_astro@2.0.14+vue@3.2.47
+  '@fullcalendar/core': registry.npmjs.org/@fullcalendar/core/6.1.4
+  '@fullcalendar/daygrid': registry.npmjs.org/@fullcalendar/daygrid/6.1.4_@fullcalendar+core@6.1.4
+  '@fullcalendar/icalendar': registry.npmjs.org/@fullcalendar/icalendar/6.1.4_64qkfpxsrfk6zyoef2l5wecmqe
+  '@fullcalendar/interaction': registry.npmjs.org/@fullcalendar/interaction/6.1.4_@fullcalendar+core@6.1.4
+  '@fullcalendar/timegrid': registry.npmjs.org/@fullcalendar/timegrid/6.1.4_@fullcalendar+core@6.1.4
+  '@fullcalendar/vue3': registry.npmjs.org/@fullcalendar/vue3/6.1.4_mwkae5zbusy4i6bauih3ulwz6y
   '@yeger/vue-masonry-wall': registry.npmjs.org/@yeger/vue-masonry-wall/3.4.3_vue@3.2.47
   astro: registry.npmjs.org/astro/2.0.14
   dayjs: registry.npmjs.org/dayjs/1.11.7
+  ical.js: registry.npmjs.org/ical.js/1.5.0
   rehype-katex: registry.npmjs.org/rehype-katex/6.0.2
   remark-math: registry.npmjs.org/remark-math/5.1.1
   tailwindcss: registry.npmjs.org/tailwindcss/3.2.7
@@ -883,6 +897,74 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  registry.npmjs.org/@fullcalendar/core/6.1.4:
+    resolution: {integrity: sha512-ZDD0Owv0LezAk14nsRNaOc9nbowItGmT0mnjOhEw+L6B8P5eads8yYaNA9itn70MWoOjiAG8xqD7Yk1iJGxqgQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@fullcalendar/core/-/core-6.1.4.tgz}
+    name: '@fullcalendar/core'
+    version: 6.1.4
+    dependencies:
+      preact: registry.npmjs.org/preact/10.13.0
+    dev: false
+
+  registry.npmjs.org/@fullcalendar/daygrid/6.1.4_@fullcalendar+core@6.1.4:
+    resolution: {integrity: sha512-X0QWEiA/hT8GYiQzmXt9DlZTWaQbNtBHBXGtaMNcVXbGHDCzLoWTHrde/jABGfr/i2+d9sLUO4oTtwz2HVpNtQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@fullcalendar/daygrid/-/daygrid-6.1.4.tgz}
+    id: registry.npmjs.org/@fullcalendar/daygrid/6.1.4
+    name: '@fullcalendar/daygrid'
+    version: 6.1.4
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.4
+    dependencies:
+      '@fullcalendar/core': registry.npmjs.org/@fullcalendar/core/6.1.4
+    dev: false
+
+  registry.npmjs.org/@fullcalendar/icalendar/6.1.4_64qkfpxsrfk6zyoef2l5wecmqe:
+    resolution: {integrity: sha512-qMu55CUvzYDhpU+ylLi5/o70g0zcSEkxUl1Cxs4hizG6DB0KzF5AzwCD9L1CWkjtrtKd8Eoq1uBQegAUuZrkRw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@fullcalendar/icalendar/-/icalendar-6.1.4.tgz}
+    id: registry.npmjs.org/@fullcalendar/icalendar/6.1.4
+    name: '@fullcalendar/icalendar'
+    version: 6.1.4
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.4
+      ical.js: ^1.4.0
+    dependencies:
+      '@fullcalendar/core': registry.npmjs.org/@fullcalendar/core/6.1.4
+      ical.js: registry.npmjs.org/ical.js/1.5.0
+    dev: false
+
+  registry.npmjs.org/@fullcalendar/interaction/6.1.4_@fullcalendar+core@6.1.4:
+    resolution: {integrity: sha512-69G2B61bPiHy7VyTDiwU9l8yRHPUK9XxNxjIdm3N0nvWR6BaUIBDQe8dIWht+IZUf9qirFhnfcLWkRI0fOTWtw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@fullcalendar/interaction/-/interaction-6.1.4.tgz}
+    id: registry.npmjs.org/@fullcalendar/interaction/6.1.4
+    name: '@fullcalendar/interaction'
+    version: 6.1.4
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.4
+    dependencies:
+      '@fullcalendar/core': registry.npmjs.org/@fullcalendar/core/6.1.4
+    dev: false
+
+  registry.npmjs.org/@fullcalendar/timegrid/6.1.4_@fullcalendar+core@6.1.4:
+    resolution: {integrity: sha512-B2/levLKW0CyDQru75JeuASpCZml5W8sINCwVTstxxhjKmNBG3F5qvSX12DDrTdga/ySYObNNP1pKDwavKk/JQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@fullcalendar/timegrid/-/timegrid-6.1.4.tgz}
+    id: registry.npmjs.org/@fullcalendar/timegrid/6.1.4
+    name: '@fullcalendar/timegrid'
+    version: 6.1.4
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.4
+    dependencies:
+      '@fullcalendar/core': registry.npmjs.org/@fullcalendar/core/6.1.4
+      '@fullcalendar/daygrid': registry.npmjs.org/@fullcalendar/daygrid/6.1.4_@fullcalendar+core@6.1.4
+    dev: false
+
+  registry.npmjs.org/@fullcalendar/vue3/6.1.4_mwkae5zbusy4i6bauih3ulwz6y:
+    resolution: {integrity: sha512-5xuGFFRDSD5CF1RGx7GcIrIAi/qAFsKmSN3ABUtocTMZlC0s2JucDa7Vur1tcoq1tbj0WyHhGhxTAUN2mpDq0A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@fullcalendar/vue3/-/vue3-6.1.4.tgz}
+    id: registry.npmjs.org/@fullcalendar/vue3/6.1.4
+    name: '@fullcalendar/vue3'
+    version: 6.1.4
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.4
+      vue: ^3.0.11
+    dependencies:
+      '@fullcalendar/core': registry.npmjs.org/@fullcalendar/core/6.1.4
+      vue: registry.npmjs.org/vue/3.2.47
+    dev: false
 
   registry.npmjs.org/@jridgewell/gen-mapping/0.1.1:
     resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.1.1.tgz}
@@ -2828,6 +2910,12 @@ packages:
     engines: {node: '>=12.20.0'}
     dev: false
 
+  registry.npmjs.org/ical.js/1.5.0:
+    resolution: {integrity: sha512-7ZxMkogUkkaCx810yp0ZGKvq1ZpRgJeornPttpoxe6nYZ3NLesZe1wWMXDdwTkj/b5NtXT+Y16Aakph/ao98ZQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/ical.js/-/ical.js-1.5.0.tgz}
+    name: ical.js
+    version: 1.5.0
+    dev: false
+
   registry.npmjs.org/ieee754/1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz}
     name: ieee754
@@ -4407,6 +4495,12 @@ packages:
       nanoid: registry.npmjs.org/nanoid/3.3.4
       picocolors: registry.npmjs.org/picocolors/1.0.0
       source-map-js: registry.npmjs.org/source-map-js/1.0.2
+    dev: false
+
+  registry.npmjs.org/preact/10.13.0:
+    resolution: {integrity: sha512-ERdIdUpR6doqdaSIh80hvzebHB7O6JxycOhyzAeLEchqOq/4yueslQbfnPwXaNhAYacFTyCclhwkEbOumT0tHw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/preact/-/preact-10.13.0.tgz}
+    name: preact
+    version: 10.13.0
     dev: false
 
   registry.npmjs.org/preferred-pm/3.0.3:
