@@ -3,72 +3,86 @@ import { VNetworkGraph } from "v-network-graph";
 import "v-network-graph/lib/style.css";
 import * as vNG from "v-network-graph";
 import { reactive, watch, ref } from "vue";
-import GraphEditBar from "./GraphEditBar.vue";
-const INF = 100000;
 
-const configs = reactive(
-  vNG.defineConfigs({
-    view: {
-      panEnabled: true,
-      zoomEnabled: true,
+const INF = 100000;
+const initialConfigs = vNG.defineConfigs({
+  view: {
+    panEnabled: false,
+    zoomEnabled: false,
+  },
+  node: {
+    draggable: false,
+    label: {
+      visible: true,
+      direction: "south",
+      directionAutoAdjustment: true,
     },
-    node: {
-      draggable: true,
-      label: {
-        visible: true,
-        direction: "south",
-        directionAutoAdjustment: true,
-      },
-      normal: {
-        color: (node) => node.color,
-      },
-      hover: {
-        color: "#f3bd7f",
-      },
+    normal: {
+      color: (node) => node.color,
     },
-    edge: {
-      normal: {
-        width: 3,
-        color: "#e87d35",
-        dasharray: "0",
-        linecap: "butt",
-        animate: false,
-        animationSpeed: 50,
-      },
-      hover: {
+    hover: {
+      color: "#f3bd7f",
+    },
+  },
+  edge: {
+    normal: {
+      width: 3,
+      color: "#e87d35",
+      dasharray: "0",
+      linecap: "butt",
+      animate: false,
+      animationSpeed: 50,
+    },
+    hover: {
+      width: 4,
+      color: "#e87d35",
+      dasharray: "0",
+      linecap: "butt",
+      animate: false,
+      animationSpeed: 50,
+    },
+    gap: 5,
+    type: "straight",
+    margin: 2,
+    marker: {
+      source: {
+        type: "none",
         width: 4,
-        color: "#e87d35",
-        dasharray: "0",
-        linecap: "butt",
-        animate: false,
-        animationSpeed: 50,
+        height: 4,
+        margin: -1,
+        units: "strokeWidth",
+        color: null,
       },
-      gap: 5,
-      type: "straight",
-      margin: 2,
-      marker: {
-        source: {
-          type: "none",
-        },
-        target: {
-          type: "arrow",
-        },
+      target: {
+        type: "arrow",
+        width: 4,
+        height: 4,
+        margin: -1,
+        units: "strokeWidth",
+        color: null,
       },
     },
-  })
-);
+  },
+});
+const configs = reactive(initialConfigs);
+
+type AdjacencyList = {
+  [key: string]: string[];
+};
+
+const graphData: AdjacencyList = {
+  A: ["B", "D"],
+  B: ["E"],
+  C: ["E", "F"],
+  D: [],
+  E: ["A", "D"],
+  F: [],
+};
 
 const graph = reactive({
   nodes: {},
   edges: {},
-  adjacencyList: {
-    A: ["B", "D"],
-    B: ["E"],
-    C: ["E", "F"],
-    D: [],
-    E: ["A", "D"],
-    F: [],
-  },
+  adjacencyList: graphData,
   layout: {
     nodes: {
       A: { x: 0, y: 0 },
@@ -80,7 +94,6 @@ const graph = reactive({
     },
   },
 });
-
 const codeGlobalVariables = reactive({
   d: {},
   π: {},
@@ -150,24 +163,6 @@ watch(
     codes.codes[0].line = `s = ${codeGlobalVariables.s}`;
   }
 );
-
-const addNode = () => {
-  const node = String.fromCharCode(65 + Object.keys(graph.nodes).length);
-  graph.nodes[node] = { name: node, color: "#f3bd7f" };
-  graph.adjacencyList[node] = [];
-};
-
-const addEdge = (sourceName: string, targetName: string) => {
-  graph.adjacencyList[sourceName].push(targetName);
-  graph.edges[`${sourceName}-${targetName}`] = {
-    source: sourceName,
-    target: targetName,
-  };
-  configs.edge.marker.target.type = "none"
-  setTimeout(()=>{
-    configs.edge.marker.target.type = "arrow"
-  }, 1)
-};
 
 const codes = reactive({
   codes: [
@@ -309,38 +304,21 @@ const doCode = () => {
     }
   }
 };
-
-const isRunningWithInterval = ref(false);
-const doCodeWithInterval = () => {
-  isRunningWithInterval.value = true;
-  if (currentCodeIndex.value != -1) {
-    doCode();
-    setTimeout(doCodeWithInterval, 500);
-  }
-};
 </script>
 
 <template>
   <div>
     <div v-if="currentCodeIndex != -1" class="flex">
-      <div class="flex gap-4" v-if="!isRunningWithInterval">
-        <button
-          @click="doCode"
-          class="bg-orange-300 px-3 py-2 dark:invert text-black"
-        >
-          Run one line
-        </button>
-        <button
-          @click="doCodeWithInterval"
-          class="bg-orange-300 px-3 py-2 dark:invert text-black"
-        >
-          Run all lines
-        </button>
-      </div>
+      <button
+        @click="doCode"
+        class="bg-orange-300 px-3 py-2 dark:invert text-black"
+      >
+        Run one line
+      </button>
       <p class="ml-4 mr-2" v-if="currentCodeIndex == 0">s(source) =</p>
       <select
         v-if="currentCodeIndex == 0"
-        class="px-4 dark:invert bg-white text-black"
+        class="px-4 dark:invert text-black"
         placeholder="s (source) = "
         v-model="codeGlobalVariables.s"
       >
@@ -350,19 +328,12 @@ const doCodeWithInterval = () => {
       </select>
     </div>
     <div class="flex items-center flex-col sm:flex-row justify-center gap-4">
-      <div>
-        <div class="w-80 h-52 bg-white dark:invert">
-          <v-network-graph
-            v-model:nodes="graph.nodes"
-            :edges="graph.edges"
-            :configs="configs"
-            v-model:layouts="graph.layout"
-          />
-        </div>
-        <GraphEditBar
-          :nodes="Object.keys(graph.nodes)"
-          @add-edge="addEdge"
-          @add-node="addNode"
+      <div class="w-80 h-52 bg-white dark:invert">
+        <v-network-graph
+          v-model:nodes="graph.nodes"
+          :edges="graph.edges"
+          :configs="configs"
+          v-model:layouts="graph.layout"
         />
       </div>
       <div class="p-4 text-sm">
@@ -370,7 +341,7 @@ const doCodeWithInterval = () => {
           v-for="line in codes.codes"
           :key="line.index"
           :class="[
-            line.index == currentCodeIndex ? 'text-red-400 font-bold' : '',
+            line.index == currentCodeIndex ? 'text-highlight font-bold' : '',
             'whitespace-pre-wrap',
           ]"
         >
@@ -378,9 +349,7 @@ const doCodeWithInterval = () => {
         </p>
       </div>
     </div>
-    <div
-      class="whitespace-pre-wrap text-sm opacity-75 w-full overflow-x-auto bg-white dark:bg-black p-4"
-    >
+    <div class="whitespace-pre-wrap text-sm opacity-75 w-full overflow-x-auto bg-white dark:bg-black p-4">
       <code>d: {{ JSON.stringify(codeGlobalVariables.d) }}</code>
       <br />
       <code>π: {{ JSON.stringify(codeGlobalVariables.π) }} </code>
