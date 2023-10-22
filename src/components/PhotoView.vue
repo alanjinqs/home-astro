@@ -41,6 +41,20 @@ const images = [
     ],
   },
   {
+    title: "2023 Phone Photos",
+    contents: [
+      {
+        src: "https://static.alanjin.me/photos/2023-phone/2023_phone_1.jpg",
+      },
+      {
+        src: "https://static.alanjin.me/photos/2023-phone/2023_phone_2.jpg",
+      },
+      {
+        src: "https://static.alanjin.me/photos/2023-phone/2023_phone_3.jpg",
+      },
+    ],
+  },
+  {
     title: "Christmas 2022",
     contents: [
       {
