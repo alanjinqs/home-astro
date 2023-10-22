@@ -4,7 +4,7 @@ layout: "../layouts/MarkdownLayout.astro"
 
 ## Hi👋
 
-I'm a programmer, a photography enthusiast, and a first year Computer Science student, and this is the website about some works I've done.
+I'm a programmer, a photography enthusiast, and a second year Computer Science exhibitioner (i.e. student) at University of Oxford, and this is the website about some works I've done.
 
 ```scala
 // It's a singleton, clearly
