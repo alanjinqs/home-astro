@@ -19,7 +19,7 @@ object Alan {
     ]
 
     def startDay(): Unit = {
-        val coffee = new Coffee("Pret, Covered market street", "vanilla latte")
+        val coffee = new Coffee("vanilla latte")
         coffee.consume()
     }
 }
