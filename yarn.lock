@@ -1969,11 +1969,13 @@ __metadata:
     dayjs: "npm:^1.11.7"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
+    react-photo-album: "npm:^2.3.1"
     rehype-katex: "npm:^6.0.2"
     remark-math: "npm:^5.1.1"
     tailwindcss: "npm:^3.0.24"
     v-network-graph: "npm:^0.9.8"
     vue: "npm:^3.2.30"
+    yet-another-react-lightbox: "npm:^3.17.5"
   languageName: unknown
   linkType: soft
 
@@ -5890,6 +5892,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-photo-album@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "react-photo-album@npm:2.3.1"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: 10c0/3acc1775c2f4f3680b994b381b897e6ebb1b772f9d25582a54697336940423083f33b7f9afbf3a97a0585f338e0b0623df2a2e5d08478d1c60d5a8f1ba1883d2
+  languageName: node
+  linkType: hard
+
 "react-refresh@npm:^0.14.0":
   version: 0.14.2
   resolution: "react-refresh@npm:0.14.2"
@@ -7467,6 +7478,16 @@ __metadata:
   version: 21.1.1
   resolution: "yargs-parser@npm:21.1.1"
   checksum: 10c0/f84b5e48169479d2f402239c59f084cfd1c3acc197a05c59b98bab067452e6b3ea46d4dd8ba2985ba7b3d32a343d77df0debd6b343e5dae3da2aab2cdf5886b2
+  languageName: node
+  linkType: hard
+
+"yet-another-react-lightbox@npm:^3.17.5":
+  version: 3.17.5
+  resolution: "yet-another-react-lightbox@npm:3.17.5"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/cc732c8a8a77fd74e7b1413dcb73716bb73d990e439e45285e391e13f4dfd6ebe970878203ae2aadde07e8722577ff3f0f8621906ce2bdab9ac6360c0cf77a5e
   languageName: node
   linkType: hard
 

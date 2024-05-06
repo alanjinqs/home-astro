@@ -12,11 +12,20 @@ export default defineConfig({
     config: {
       applyBaseStyles: false
     }
-  }), vue(), mdx(), react()],
+  }),
+  // vue(),
+  react(),
+  ],
   output: "server",
   markdown: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex]
   },
-  adapter: vercel()
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+    imageService: true,
+
+  })
 });
