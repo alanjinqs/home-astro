@@ -156,7 +156,7 @@ const images = [
     </div>
     <div class="flex w-full justify-center pt-8 text-center opacity-60">
       <p>
-        Please <a href="mailto:q@alanjin.me"> contact me </a> if you wish to use
+        Please <a href="mailto:q@alanj.in"> contact me </a> if you wish to use
         any of the photos for commercial purposes.
       </p>
     </div>
