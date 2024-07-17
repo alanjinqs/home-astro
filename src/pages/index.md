@@ -4,10 +4,9 @@ layout: "../layouts/MarkdownLayout.astro"
 
 ## Hi👋
 
-I'm a programmer, a photography enthusiast, and a second year Computer Science exhibitioner (i.e. student) at University of Oxford, and this is the website about some works I've done.
+I'm a programmer, a photography enthusiast, and a third year Computer Science student at University of Oxford, and this is the website about some works I've done.
 
 ```scala
-// It's a singleton, clearly
 object Alan {
     val preferName = "Alan"
     val pronoun = "he/his/him"
