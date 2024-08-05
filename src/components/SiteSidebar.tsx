@@ -1,6 +1,11 @@
 "use client"
 import { useState } from "react"
-import { Sidebar, SidebarBody, SidebarLink, useSidebar } from "./ui/sidebar"
+import {
+  Sidebar,
+  SidebarBody,
+  SidebarLink,
+  useSidebar,
+} from "../components/ui/sidebar"
 import {
   IconBrandTabler,
   IconCamera,
@@ -44,7 +49,7 @@ export function SiteSidebar() {
 
   return (
     <Sidebar open={open} setOpen={setOpen}>
-      <SidebarBody className="justify-between gap-10">
+      <SidebarBody className="justify-between gap-10 rounded-r-xl">
         <div className="flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
           <div className="flex flex-col gap-2">
             {links.map((link, idx) => (
@@ -65,6 +70,11 @@ export const SidebarBottom = () => {
     <div>
       <motion.span className="flex w-full flex-col items-center justify-center whitespace-pre text-center text-neutral-700 transition duration-150 group-hover/sidebar:translate-x-1 dark:text-neutral-200">
         <motion.span
+          transition={{
+            type: "spring",
+            stiffness: 200,
+            damping: 20,
+          }}
           animate={{
             opacity: animate ? (open ? 1 : 0) : 1,
             rotateZ: animate ? (open ? 0 : 90) : 0,
@@ -80,6 +90,11 @@ export const SidebarBottom = () => {
         </motion.span>
 
         <motion.span
+          transition={{
+            type: "spring",
+            stiffness: 200,
+            damping: 20,
+          }}
           animate={{
             opacity: animate ? (open ? 1 : 0) : 1,
             rotateZ: animate ? (open ? 0 : 90) : 0,
@@ -95,6 +110,11 @@ export const SidebarBottom = () => {
         </motion.span>
 
         <motion.span
+          transition={{
+            type: "spring",
+            stiffness: 200,
+            damping: 20,
+          }}
           className="mt-2 font-medium"
           animate={{
             rotateZ: animate ? (open ? 0 : 90) : 0,

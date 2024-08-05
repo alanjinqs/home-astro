@@ -1,0 +1,22 @@
+---
+import Photo from "@/components/Photo.astro"
+import Layout from "../../layouts/Layout.astro"
+import photos from "./photos"
+---
+
+<Layout title={"Photography"}>
+  <div class="flex flex-col gap-4 p-6">
+    {
+      photos.map((photo) => {
+        return (
+          <Photo
+            imagePath={photo.src}
+            altText={photo.title}
+            time={photo.time}
+            location={photo.location}
+          />
+        )
+      })
+    }
+  </div>
+</Layout>
