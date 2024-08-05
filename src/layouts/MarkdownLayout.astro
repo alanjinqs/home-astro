@@ -1,0 +1,14 @@
+---
+import Layout from "./Layout.astro"
+const { frontmatter } = Astro.props
+---
+
+<Layout title={frontmatter.title}>
+  <div class="flex w-full justify-center">
+    <div
+      class="prose m-10 !max-w-4xl dark:prose-invert prose-p:text-justify prose-a:text-blue-600 prose-img:rounded-xl"
+    >
+      <slot />
+    </div>
+  </div>
+</Layout>
