@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content"
+import { Image } from "astro:assets"
+import Layout from "../../layouts/Layout.astro"
+import CodeTag from "../../components/code/CodeTag"
+
+const allProjects = await getCollection("project")
+---
+
+<Layout title={"Code Projects"}>
+  <div
+    class="grid-col-1 grid gap-4 p-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+  >
+    {
+      allProjects
+        .sort((a: any, b: any) => a.data.order - b.data.order)
+        .map((project: any) => (
+          // <a href={`/code/${project.slug}`} class="">
+          <div class="w-full overflow-hidden rounded-xl border">
+            <div class="h-[200px] w-full object-contain">
+              <Image
+                src={project.data.cover}
+                alt={project.data.title}
+                class={"h-full w-full object-contain"}
+              />
+            </div>
+            <div class="p-6">
+              <h4 class="font-semibold">{project.data.title}</h4>
+              <div class="text-sm">
+                <p class="my-1 opacity-70">{project.data.description}</p>
+
+                <p class="opacity-50">{project.data.dateInterval}</p>
+              </div>
+              <div class="mt-2 flex flex-row flex-wrap items-center gap-1.5">
+                {project.data.tags.map((tag: string) => (
+                  <CodeTag tag={tag} />
+                ))}
+              </div>
+            </div>
+          </div>
+          // </a>
+        ))
+    }
+  </div>
+</Layout>
