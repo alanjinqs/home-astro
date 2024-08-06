@@ -5,7 +5,7 @@ import photos from "./photos"
 ---
 
 <Layout title={"Photography"}>
-  <div class="flex flex-col gap-4 p-6">
+  <div class="flex flex-col gap-4 px-10 py-6 lg:hidden">
     {
       photos.map((photo) => {
         return (
@@ -18,5 +18,37 @@ import photos from "./photos"
         )
       })
     }
+  </div>
+  <div class="hidden flex-row gap-4 px-10 py-6 lg:flex">
+    <div class="flex flex-col gap-4 py-6">
+      {
+        photos.map((photo, i) => {
+          if (i % 2 !== 0) return null
+          return (
+            <Photo
+              imagePath={photo.src}
+              altText={photo.title}
+              time={photo.time}
+              location={photo.location}
+            />
+          )
+        })
+      }
+    </div>
+    <div class="flex flex-col gap-4 py-6">
+      {
+        photos.map((photo, i) => {
+          if (i % 2 === 0) return null
+          return (
+            <Photo
+              imagePath={photo.src}
+              altText={photo.title}
+              time={photo.time}
+              location={photo.location}
+            />
+          )
+        })
+      }
+    </div>
   </div>
 </Layout>
