@@ -23,13 +23,13 @@ export function SiteSidebar() {
         <IconHome className="flex-shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
-    {
-      label: "Dev Blog",
-      href: "/blog",
-      icon: (
-        <IconFileCode className="flex-shrink-0 text-neutral-700 dark:text-neutral-200" />
-      ),
-    },
+    // {
+    //   label: "Dev Log",
+    //   href: "/devlog",
+    //   icon: (
+    //     <IconFileCode className="flex-shrink-0 text-neutral-700 dark:text-neutral-200" />
+    //   ),
+    // },
     {
       label: "Photography",
       href: "/photo",
@@ -53,7 +53,7 @@ export function SiteSidebar() {
         <div className="flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
           <div className="flex flex-col gap-2">
             {links.map((link, idx) => (
-              <SidebarLink key={idx} link={link} />
+              <SidebarLink setOpen={setOpen} key={idx} link={link} />
             ))}
           </div>
         </div>
