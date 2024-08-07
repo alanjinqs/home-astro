@@ -4,9 +4,9 @@ const { frontmatter } = Astro.props
 ---
 
 <Layout title={frontmatter.title}>
-  <div class="flex w-full justify-center">
+  <div class="m-6 md:m-10">
     <div
-      class="prose m-10 !max-w-4xl dark:prose-invert prose-p:text-justify prose-a:text-blue-600 prose-img:rounded-xl"
+      class="prose mx-auto !max-w-4xl dark:prose-invert prose-p:text-justify prose-a:text-blue-600 prose-code:w-full prose-code:overflow-x-auto prose-img:rounded-xl"
     >
       <slot />
     </div>
