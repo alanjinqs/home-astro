@@ -1,7 +1,7 @@
 const photos = [
   {
-    src: "/src/photos/240804-DSC09182-export.jpg",
-    title: "240804-DSC09182-export.jpg",
+    src: "/src/photos/240804-DSC09179-export.jpg",
+    title: "240804-DSC09179-export.jpg",
     location: "Ngong Ping, Hong Kong",
     time: "Aug, 2024",
   },
