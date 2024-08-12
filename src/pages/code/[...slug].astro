@@ -1,5 +1,7 @@
 ---
+import CodeTag from "@/components/code/CodeTag"
 import BlogPostLayout from "@/layouts/BlogPostLayout.astro"
+import { Image } from "astro:assets"
 import { getCollection } from "astro:content"
 
 export async function getStaticPaths() {
@@ -18,6 +20,10 @@ const { Content } = await entry.render()
 ---
 
 <BlogPostLayout title={entry.data.title}>
+  <Image src={entry.data.cover} alt={entry.data.title} class="w-full" />
   <h1>{entry.data.title}</h1>
+  <div class="flex flex-row flex-wrap items-center gap-1.5">
+    {entry.data.tags.map((tag: string) => <CodeTag tag={tag} />)}
+  </div>
   <Content />
 </BlogPostLayout>

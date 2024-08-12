@@ -15,30 +15,34 @@ const allProjects = await getCollection("project")
       allProjects
         .sort((a: any, b: any) => a.data.order - b.data.order)
         .map((project: any) => (
-          // <a href={`/code/${project.slug}`} class="">
-          <div class="w-full overflow-hidden rounded-xl border">
-            <div class="h-[200px] w-full object-contain">
-              <Image
-                src={project.data.cover}
-                alt={project.data.title}
-                class={"h-full w-full object-contain"}
-              />
-            </div>
-            <div class="p-6">
-              <h4 class="font-semibold">{project.data.title}</h4>
-              <div class="text-sm">
-                <p class="my-1 opacity-70">{project.data.description}</p>
+          <a
+            href={project.data.hasDescription ? `/code/${project.slug}` : ""}
+            
+            class={project.data.hasDescription ? "" : "cursor-default pointer-events-none"}
+          >
+            <div class="w-full overflow-hidden rounded-xl border">
+              <div class="h-[200px] w-full object-contain">
+                <Image
+                  src={project.data.cover}
+                  alt={project.data.title}
+                  class={"h-full w-full object-contain"}
+                />
+              </div>
+              <div class="p-6">
+                <h4 class="font-semibold">{project.data.title}</h4>
+                <div class="text-sm">
+                  <p class="my-1 opacity-70">{project.data.description}</p>
 
-                <p class="opacity-50">{project.data.dateInterval}</p>
-              </div>
-              <div class="mt-2 flex flex-row flex-wrap items-center gap-1.5">
-                {project.data.tags.map((tag: string) => (
-                  <CodeTag tag={tag} />
-                ))}
+                  <p class="opacity-50">{project.data.dateInterval}</p>
+                </div>
+                <div class="mt-2 flex flex-row flex-wrap items-center gap-1.5">
+                  {project.data.tags.map((tag: string) => (
+                    <CodeTag tag={tag} />
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-          // </a>
+          </a>
         ))
     }
   </div>

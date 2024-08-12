@@ -5,6 +5,51 @@ description: A YTMusic-like music player for bilibili
 dateInterval: June 2024 - Actively Maintaining
 tags: ["React Native", "Personal Side Project", "Open Source"]
 cover: ./mkm-new.jpg
+hasDescription: true
 ---
 
-Test Test
+<a  class="flex gap-4 w-full" href="https://github.com/alanjinqs/mikufans-music" target="_blank" rel="noopener noreferrer">
+  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/alanjinqs/mikufans-music?style=for-the-badge" />
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/alanjinqs/mikufans-music?style=for-the-badge" />
+</a>
+
+> Yet another YouTube music like player for bilibili.com.
+
+
+A music player for Bilibili.com (a video website) that has the following features:
+
+- Search for videos / content creators
+- Favorites / Video Collections / Playlists
+- Sync local playlists with favorites
+- Heartbeat (history reporting)
+- Automatically select the best audio quality stream, and auto select flac stream if you are a premium member
+- Lyrics search / display / jump
+
+## Tech Stack
+
+### React Native
+As I'm currently daily driving a Pixel 8, building with Swift and SwiftUI is not an option. Although I've tried Flutter and the *recommended* android development echosystem multiple times before, I never felt comfortable with the developer experience. As a TypeScript fan, the option is very clear: React Native.
+
+The only problem is that I've built an App with React Native 3 years ago, and the experience was not pleasant. Setting up React Nativer CLI is a nightmare, and I used to have a lot of trouble with the native modules. Thus, it is time to give Expo a try.
+
+
+### Expo
+I strongly recommend [this Medium post](https://medium.com/alan/our-journey-from-react-native-to-expo-for-mobile-app-development-at-alan-%EF%B8%8F-3b1569e8ab7c) by Xavier Seignard if you are considering Expo. 
+
+Although I belive Expo imrpove the DX a lot, EAS is way to expensive for a personal project and thus I have to stick with the managed workflow. This is suprisingly good compared to the React Native CLI - You still need to install XCode and Android Studio, deal with the nightmare of environment setup, and trying to figure out what is wrong with the console gives random error messages that is totally unrelated. However, the Expo prebuild solves so many problems in native linking and the Expo Go app is a life saver and, thanks for the Expo Dev Client, I don't really need to build the native app unless there's a new native module to add.
+
+Overall, the Expo experience is very great even without EAS. It should be the first choice for React Native in 2024.
+
+### ~Tailwind~ NativeWind v4
+For me, writing Tailwind CSS is a pleasure. I love the flow of writing styles without worried about making class-name and the consistency of the design. As an implementation of Tailwind CSS for React Native, NativeWind is the choice for me.
+
+However, it is still anoying to run into the difference of default behavior between web and React Native. For example, in RN, flex has column direction by default. Let's just hope the React strict dom can save us in the future.
+
+### ~Shadcn~ React Native Reusable
+As a great alternative for Shadcn in RN, React Native Reusable takes the same approach of "Copy and Paste components" with NativeWind. It is probably the best choice for a small project like this.
+
+
+---
+
+Generally speaking, the product does what I need for everyday commuting, which is the main reason I started this project. 
+## EOF

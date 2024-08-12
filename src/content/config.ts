@@ -22,6 +22,7 @@ const projectCollection = defineCollection({
       cover: image().refine((img) => img.width >= 600, {
         message: "Cover image must be at least 600 pixels wide!",
       }),
+      hasDescription: z.boolean().optional(),
     }),
 })
 
